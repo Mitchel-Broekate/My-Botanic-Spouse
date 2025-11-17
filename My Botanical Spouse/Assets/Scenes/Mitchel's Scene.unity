@@ -457,6 +457,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 4691696046945121326, guid: 6a3cbc46e22ae074886ffcfc7fa9561b,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1603399076}
+    - target: {fileID: 8020357890357241062, guid: 6a3cbc46e22ae074886ffcfc7fa9561b,
+        type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Name
+      value: Tracking State Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395093698865434703, guid: 6a3cbc46e22ae074886ffcfc7fa9561b,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1603399076}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -666,6 +681,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8edd2fba1e76bf244bba089f6f2dc3f5, type: 3}
+--- !u!114 &1603399076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1296703895057231038, guid: 8edd2fba1e76bf244bba089f6f2dc3f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1603399075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
