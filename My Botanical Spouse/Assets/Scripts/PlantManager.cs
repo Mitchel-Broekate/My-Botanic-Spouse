@@ -1,165 +1,171 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlantManager : MonoBehaviour
 {
     #region Vars
-    [SerializeField] int _plantMaxHealth;
-    [SerializeField] int _plantMaxAffection;
-    [SerializeField] int _plantMaxSoilQuality;
-    [SerializeField] int _plantMaxThirst;
-    [SerializeField] int _plantMaxWarmth;
+    [Header("Stat Decrease Rate")]
+    [SerializeField] float _decreaseRateAffection;
+    [SerializeField] float _decreaseRateSoilQuality;
+    [SerializeField] float _decreaseRateThirst;
+    [SerializeField] float _decreaseRateWarmth;
 
-    [SerializeField] int plantHealth;
-    [SerializeField] int plantAffection;
-    [SerializeField] int plantSoilQuality;
-    [SerializeField] int plantThirst;
-    [SerializeField] int plantWarmth;
+    [Header("Stat Max Config")]
+    [SerializeField] float _plantMaxHealth;
+    [SerializeField] float _plantMaxAffection;
+    [SerializeField] float _plantMaxSoilQuality;
+    [SerializeField] float _plantMaxThirst;
+    [SerializeField] float _plantMaxWarmth;
+    [SerializeField] float _plantMinWarmth;
+
+    [Header("Current Stat Values")]
+    [SerializeField] float _plantHealth;
+    [SerializeField] float _plantAffection;
+    [SerializeField] float _plantSoilQuality;
+    [SerializeField] float _plantThirst;
+    [SerializeField] float _plantWarmth;
+    [SerializeField] bool _heaterState;
+
+    Coroutine _decreaseStats;
     #endregion
 
     /// <summary>
     /// Will update the plant stats (Decrease all stats over time)
     /// </summary>
-    void Update()
+    public void SetPlantState(bool gameState)
     {
-
+        //if the game has started, change all stats at their rate; If it ends stop the stat change
+        if (gameState)
+        {
+            _decreaseStats = StartCoroutine(DecreaseStats());
+        }
+        else
+        {
+            if (_decreaseStats == null) return;
+            StopCoroutine(_decreaseStats);
+        }
     }
 
-    #region ChangeStat ints
+    IEnumerator DecreaseStats()
+    {
+        while (_plantHealth > 0)
+        {
+            float dt = Time.deltaTime;
+
+            ChangePlant("Affection", _decreaseRateAffection * dt);
+            ChangePlant("SoilQuality", _decreaseRateSoilQuality * dt);
+            ChangePlant("Thirst", _decreaseRateThirst * dt);
+            ChangePlantWarmth(_decreaseRateWarmth * dt);
+
+            yield return null;
+        }
+    }
+
+    #region Change Stat floats
     /// <summary>
-    /// This int changes the health of the plant based on the given information (change types: "plus", "min")
+    /// This float changes the Health of the plant based on the given information (changeTypes: Health, Affection, SoilQuality, Thirst)
     /// </summary>
     /// <param name="changeType"></param>
     /// <param name="healthchange"></param>
     /// <returns></returns>
-    public int ChangePlantHealth(string changeType, int healthChange)
+    public float ChangePlant(string changeType, float changeAmount)
     {
-        if (changeType == "plus")
+        switch (changeType)
         {
-            plantHealth += healthChange;
-            if (plantHealth > _plantMaxHealth)
-            {
-                plantHealth = _plantMaxHealth;
-            }
-        }
-        else if (changeType == "min")
-        {
-            plantHealth -= healthChange;
-            if (plantHealth <= 0)
-            {
-                //Execute plant death (min 1 plant, if plant count if 0 gameover)
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Not a valid changeType");
+            case "Health":
+                if (_plantHealth <= 0)
+                {
+                    _plantHealth = 0;
+                    //kill plant void
+
+                    Debug.Log("You killed the plant");
+                }
+                else
+                {
+                    _plantHealth -= changeAmount;
+                }
+                break;
+            case "Affection":
+                if (_plantAffection < 0)
+                {
+                    _plantAffection = 0;
+
+                    ChangePlant("Health", 7.5f);
+                }
+                else
+                {
+                    _plantAffection -= changeAmount;
+                }
+                break;
+            case "SoilQuality":
+                if (_plantSoilQuality < 0)
+                {
+                    _plantSoilQuality = 0;
+
+                    ChangePlant("Health", 7.5f);
+                }
+                else
+                {
+                    _plantSoilQuality -= changeAmount;
+                }
+                break;
+            case "Thirst":
+                if (_plantThirst < 0)
+                {
+                    _plantThirst = 0;
+
+                    ChangePlant("Health", 7.5f);
+                }
+                else
+                {
+                    _plantThirst -= changeAmount;
+                }
+                break;
+            default:
+                Debug.LogWarning(changeType + " Is not a valid option");
+                break;
+
         }
 
-        return plantHealth;
+        return _plantHealth;
     }
 
-    public int ChangePlantAffection(string changeType, int affectionChange)
+    /// <summary>
+    /// This float changes the Warmth of the plant based on the given information (change types: "plus", "min")
+    /// </summary>
+    /// <param name="changeType"></param>
+    /// <param name="warmthChange"></param>
+    /// <returns></returns>
+    float ChangePlantWarmth(float changeAmount)
     {
-        if (changeType == "plus")
+        if (_heaterState)
         {
-            plantAffection += affectionChange;
-            if (plantAffection > _plantMaxAffection)
-            {
-                plantAffection = _plantMaxAffection;
-            }
-        }
-        else if (changeType == "min")
-        {
-            plantAffection -= affectionChange;
-            if (plantAffection <= 0)
+            _plantWarmth += changeAmount;
+            _plantWarmth = Mathf.Clamp(_plantWarmth, _plantMaxWarmth, _plantMinWarmth);
+            if (_plantWarmth == _plantMaxWarmth)
             {
                 //Execute plant health damage over time
+                ChangePlant("Health", 7.5f);
             }
         }
         else
         {
-            Debug.LogWarning("Not a valid changeType");
+            _plantWarmth -= changeAmount;
+            _plantWarmth = Mathf.Clamp(_plantWarmth, _plantMaxWarmth, _plantMinWarmth);
+            if (_plantWarmth == _plantMaxWarmth)
+            {
+                //Execute plant health damage over time
+                ChangePlant("Health", 7.5f);
+            }
         }
 
-        return plantAffection;
+        return _plantWarmth;
     }
-
-    public int ChangePlantSoilQuality(string changeType, int soilChange)
+    
+    public bool _HeaterState(bool newState)
     {
-        if (changeType == "plus")
-        {
-            plantSoilQuality += soilChange;
-            if (plantSoilQuality > _plantMaxSoilQuality)
-            {
-                plantSoilQuality = _plantMaxSoilQuality;
-            }
-        }
-        else if (changeType == "min")
-        {
-            plantSoilQuality -= soilChange;
-            if (plantSoilQuality <= 0)
-            {
-                //Execute plant health damage over time
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Not a valid changeType");
-        }
-
-        return plantSoilQuality;
-    }
-
-    public int ChangePlantSoilThirst(string changeType, int thirstChange)
-    {
-        if (changeType == "plus")
-        {
-            plantThirst += thirstChange;
-            if (plantThirst > _plantMaxThirst)
-            {
-                plantThirst = _plantMaxThirst;
-            }
-        }
-        else if (changeType == "min")
-        {
-            plantThirst -= thirstChange;
-            if (plantThirst <= 0)
-            {
-                //Execute plant health damage over time
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Not a valid changeType");
-        }
-
-        return plantThirst;
-    }
-
-    public int ChangePlantSoilWarmth(string changeType, int warmthChange)
-    {
-        if (changeType == "plus")
-        {
-            plantWarmth += warmthChange;
-            if (plantWarmth > _plantMaxWarmth)
-            {
-                plantWarmth = _plantMaxWarmth;
-            }
-        }
-        else if (changeType == "min")
-        {
-            plantWarmth -= warmthChange;
-            if (plantWarmth <= 0)
-            {
-                //Execute plant health damage over time
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Not a valid changeType");
-        }
-
-
-        return plantWarmth;
+        _heaterState = newState;
+        return _heaterState;
     }
     #endregion
 }
