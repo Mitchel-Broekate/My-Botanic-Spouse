@@ -630,6 +630,7 @@ GameObject:
   - component: {fileID: 778608376}
   - component: {fileID: 778608375}
   - component: {fileID: 778608374}
+  - component: {fileID: 778608378}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -725,6 +726,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &778608378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778608373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec755e06f4fc1842b128bb63e1673c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _decreaseRate: 0
+  _plantMaxHealth: 0
+  _plantMaxAffection: 0
+  _plantMaxSoilQuality: 0
+  _plantMaxThirst: 0
+  _plantMaxWarmth: 0
+  plantHealth: 0
+  plantAffection: 0
+  plantSoilQuality: 0
+  plantThirst: 0
+  plantWarmth: 0
+  tempGameState: 0
 --- !u!4 &1533493007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1936271140515534913, guid: 6a3cbc46e22ae074886ffcfc7fa9561b,
