@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class SetHeaterState : MonoBehaviour
 {
     [SerializeField] PlantManager plantManager;
-    [SerializeField] Material heaterMat;
     bool _currentHeaterState;
 
     public void ChangeHeaterState()
