@@ -5,17 +5,23 @@ public class PlantManager : MonoBehaviour
 {
     #region Vars
     [Header("Stat Decrease Rate")]
+    [Range(0, 2)]
     [SerializeField] float _decreaseRateAffection;
+    [Range(0,2)]
     [SerializeField] float _decreaseRateSoilQuality;
+    [Range(0,1)]
     [SerializeField] float _decreaseRateThirst;
-    [SerializeField] float _decreaseRateWarmth;
+    [Range(0, 0.2f)]
+    [SerializeField] float _changeRateWarmth;
 
     [Header("Stat Max Config")]
     [SerializeField] float _plantMaxHealth;
     [SerializeField] float _plantMaxAffection;
     [SerializeField] float _plantMaxSoilQuality;
     [SerializeField] float _plantMaxThirst;
+    [Range(30, 50)]
     [SerializeField] float _plantMaxWarmth;
+    [Range(0,20)]
     [SerializeField] float _plantMinWarmth;
 
     [Header("Current Stat Values")]
@@ -24,13 +30,26 @@ public class PlantManager : MonoBehaviour
     [SerializeField] float _plantSoilQuality;
     [SerializeField] float _plantThirst;
     [SerializeField] float _plantWarmth;
+
     [SerializeField] bool _heaterState;
 
     Coroutine _decreaseStats;
     #endregion
 
     /// <summary>
-    /// Will update the plant stats (Decrease all stats over time)
+    /// This function will set the stat starting stat values
+    /// </summary>
+    void Start()
+    {
+        _plantHealth = _plantMaxHealth;
+        _plantAffection = _plantMaxAffection;
+        _plantSoilQuality = _plantMaxSoilQuality;
+        _plantThirst = _plantMaxThirst;
+        _plantWarmth = _plantMaxWarmth / 2;
+    }
+
+    /// <summary>
+    /// At the start of the level this function will activate the plant stat decrease (Enable/Disable in the GameManager)
     /// </summary>
     public void SetPlantState(bool gameState)
     {
@@ -46,16 +65,20 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Decreases the plant stats over time (Enables the gameplay)
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DecreaseStats()
     {
         while (_plantHealth > 0)
         {
             float dt = Time.deltaTime;
 
-            ChangePlant("Affection", _decreaseRateAffection * dt);
-            ChangePlant("SoilQuality", _decreaseRateSoilQuality * dt);
-            ChangePlant("Thirst", _decreaseRateThirst * dt);
-            ChangePlantWarmth(_decreaseRateWarmth * dt);
+            ChangePlantStats("Affection", _decreaseRateAffection * dt);
+            ChangePlantStats("SoilQuality", _decreaseRateSoilQuality * dt);
+            ChangePlantStats("Thirst", _decreaseRateThirst * dt);
+            ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
             yield return null;
         }
@@ -68,7 +91,7 @@ public class PlantManager : MonoBehaviour
     /// <param name="changeType"></param>
     /// <param name="healthchange"></param>
     /// <returns></returns>
-    public float ChangePlant(string changeType, float changeAmount)
+    public float ChangePlantStats(string changeType, float changeAmount)
     {
         switch (changeType)
         {
@@ -86,11 +109,11 @@ public class PlantManager : MonoBehaviour
                 }
                 break;
             case "Affection":
-                if (_plantAffection < 0)
+                if (_plantAffection <= 0)
                 {
                     _plantAffection = 0;
 
-                    ChangePlant("Health", 7.5f);
+                    ChangePlantStats("Health", 2f);
                 }
                 else
                 {
@@ -98,11 +121,11 @@ public class PlantManager : MonoBehaviour
                 }
                 break;
             case "SoilQuality":
-                if (_plantSoilQuality < 0)
+                if (_plantSoilQuality <= 0)
                 {
                     _plantSoilQuality = 0;
 
-                    ChangePlant("Health", 7.5f);
+                    ChangePlantStats("Health", 2f);
                 }
                 else
                 {
@@ -110,59 +133,52 @@ public class PlantManager : MonoBehaviour
                 }
                 break;
             case "Thirst":
-                if (_plantThirst < 0)
+                if (_plantThirst <= 0)
                 {
                     _plantThirst = 0;
 
-                    ChangePlant("Health", 7.5f);
+                    ChangePlantStats("Health", 2f);
                 }
                 else
                 {
                     _plantThirst -= changeAmount;
                 }
                 break;
+            case "Warmth":
+                    if (_heaterState)
+                    {
+                        if (_plantWarmth >= _plantMaxWarmth)
+                        {
+                            _plantWarmth = 100;
+                            ChangePlantStats("Health", 2f);
+                        }
+                        else
+                        {
+                            _plantWarmth += changeAmount;
+                        }
+                    }
+                    else
+                    {
+                        if (_plantWarmth == _plantMinWarmth)
+                        {
+                            _plantWarmth = 0;
+                            ChangePlantStats("Health", 2f);
+                        }
+                        else
+                        {
+                            _plantWarmth -= changeAmount;  
+                        }
+                    }
+                break;
             default:
                 Debug.LogWarning(changeType + " Is not a valid option");
                 break;
-
         }
 
         return _plantHealth;
     }
-
-    /// <summary>
-    /// This float changes the Warmth of the plant based on the given information (change types: "plus", "min")
-    /// </summary>
-    /// <param name="changeType"></param>
-    /// <param name="warmthChange"></param>
-    /// <returns></returns>
-    float ChangePlantWarmth(float changeAmount)
-    {
-        if (_heaterState)
-        {
-            _plantWarmth += changeAmount;
-            _plantWarmth = Mathf.Clamp(_plantWarmth, _plantMaxWarmth, _plantMinWarmth);
-            if (_plantWarmth == _plantMaxWarmth)
-            {
-                //Execute plant health damage over time
-                ChangePlant("Health", 7.5f);
-            }
-        }
-        else
-        {
-            _plantWarmth -= changeAmount;
-            _plantWarmth = Mathf.Clamp(_plantWarmth, _plantMaxWarmth, _plantMinWarmth);
-            if (_plantWarmth == _plantMaxWarmth)
-            {
-                //Execute plant health damage over time
-                ChangePlant("Health", 7.5f);
-            }
-        }
-
-        return _plantWarmth;
-    }
     
-    public bool _HeaterState(bool newState)
+    public bool HeaterState(bool newState)
     {
         _heaterState = newState;
         return _heaterState;
