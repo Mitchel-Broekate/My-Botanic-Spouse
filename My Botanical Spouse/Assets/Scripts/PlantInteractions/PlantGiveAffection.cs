@@ -9,6 +9,8 @@ public class PlantGiveAffection : MonoBehaviour
     {
         plantManager.ChangePlantStats("Affection", _affectionToGive);
 
+        Debug.Log("Touched a plant");
+
         //play animation
     }
     //Add affection in the PlantManager
