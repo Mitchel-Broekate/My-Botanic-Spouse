@@ -7,12 +7,17 @@ public class PlantGiveAffection : MonoBehaviour
 
     public void GiveAffection()
     {
-        plantManager.ChangePlantStats("Affection", _affectionToGive);
+        if(plantManager.AllowGivingAffection)
+        {
+            plantManager.ChangePlantStats("Affection", -_affectionToGive);
 
-        Debug.Log("Touched a plant");
+            Debug.Log("Touched a plant");
+        }
+        else
+        {
+            Debug.Log("Can't touch boywife yet");
+        }
 
-        //play animation
+        //Play cute boywife animation :3 :P :D
     }
-    //Add affection in the PlantManager
-    //Play cute boywife animation :3 :P :D
 }

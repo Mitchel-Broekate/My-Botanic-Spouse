@@ -31,7 +31,9 @@ public class PlantManager : MonoBehaviour
     [SerializeField] float _plantThirst;
     [SerializeField] float _plantWarmth;
 
+    [Header("Stat States")]
     [SerializeField] bool _heaterState;
+    [SerializeField] bool _allowGivingAffection = false;
 
     Coroutine _decreaseStats;
     #endregion
@@ -39,13 +41,20 @@ public class PlantManager : MonoBehaviour
     /// <summary>
     /// This function will set the stat starting stat values
     /// </summary>
-    void Start()
+    void Awake()
     {
         _plantHealth = _plantMaxHealth;
         _plantAffection = _plantMaxAffection;
         _plantSoilQuality = _plantMaxSoilQuality;
         _plantThirst = _plantMaxThirst;
         _plantWarmth = _plantMaxWarmth / 2;
+    }
+
+    void Update()
+    {
+        //the plant should allow the player to pet it afte a certain amount of affection has dropped.
+
+
     }
 
     /// <summary>
@@ -80,6 +89,15 @@ public class PlantManager : MonoBehaviour
             ChangePlantStats("Thirst", _decreaseRateThirst * dt);
             ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
+            if(_plantAffection < (_plantMaxAffection / 10) * 7 )
+            {
+                _allowGivingAffection = true;
+            }
+            else
+            {
+                _allowGivingAffection = false;
+            }
+
             yield return null;
         }
     }
@@ -99,8 +117,8 @@ public class PlantManager : MonoBehaviour
                 if (_plantHealth <= 0)
                 {
                     _plantHealth = 0;
-                    //kill plant void
 
+                    //kill plant void
                     Debug.Log("You killed the plant");
                 }
                 else
@@ -145,36 +163,35 @@ public class PlantManager : MonoBehaviour
                 }
                 break;
             case "Warmth":
-                    if (_heaterState)
+                if (_heaterState)
+                {
+                    if (_plantWarmth >= _plantMaxWarmth)
                     {
-                        if (_plantWarmth >= _plantMaxWarmth)
-                        {
-                            _plantWarmth = 100;
-                            ChangePlantStats("Health", 2f);
-                        }
-                        else
-                        {
-                            _plantWarmth += changeAmount;
-                        }
+                        _plantWarmth = _plantMaxWarmth;
+                        ChangePlantStats("Health", 2f);
                     }
                     else
                     {
-                        if (_plantWarmth == _plantMinWarmth)
-                        {
-                            _plantWarmth = 0;
-                            ChangePlantStats("Health", 2f);
-                        }
-                        else
-                        {
-                            _plantWarmth -= changeAmount;  
-                        }
+                        _plantWarmth += changeAmount;
                     }
+                }
+                else
+                {
+                    if (_plantWarmth <= _plantMinWarmth)
+                    {
+                        _plantWarmth = _plantMinWarmth;
+                        ChangePlantStats("Health", 2f);
+                    }
+                    else
+                    {
+                        _plantWarmth -= changeAmount;
+                    }
+                }
                 break;
             default:
                 Debug.LogWarning(changeType + " Is not a valid option");
-                break;
+            break;
         }
-
         return _plantHealth;
     }
     
@@ -182,6 +199,11 @@ public class PlantManager : MonoBehaviour
     {
         _heaterState = newState;
         return _heaterState;
+    }
+
+    public bool AllowGivingAffection
+    {
+        get{return _allowGivingAffection;}
     }
     #endregion
 }
