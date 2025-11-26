@@ -5,13 +5,9 @@ public class PlantManager : MonoBehaviour
 {
     #region Vars
     [Header("Stat Decrease Rate")]
-    [Range(0, 2)]
     [SerializeField] float _decreaseRateAffection;
-    [Range(0,2)]
     [SerializeField] float _decreaseRateSoilQuality;
-    [Range(0,1)]
     [SerializeField] float _decreaseRateThirst;
-    [Range(0, 0.2f)]
     [SerializeField] float _changeRateWarmth;
 
     [Header("Stat Max Config")]
@@ -19,9 +15,7 @@ public class PlantManager : MonoBehaviour
     [SerializeField] float _plantMaxAffection;
     [SerializeField] float _plantMaxSoilQuality;
     [SerializeField] float _plantMaxThirst;
-    [Range(30, 50)]
     [SerializeField] float _plantMaxWarmth;
-    [Range(0,20)]
     [SerializeField] float _plantMinWarmth;
 
     [Header("Current Stat Values")]
@@ -41,20 +35,13 @@ public class PlantManager : MonoBehaviour
     /// <summary>
     /// This function will set the stat starting stat values
     /// </summary>
-    void Awake()
+    void Start()
     {
         _plantHealth = _plantMaxHealth;
         _plantAffection = _plantMaxAffection;
         _plantSoilQuality = _plantMaxSoilQuality;
         _plantThirst = _plantMaxThirst;
-        _plantWarmth = _plantMaxWarmth / 2;
-    }
-
-    void Update()
-    {
-        //the plant should allow the player to pet it afte a certain amount of affection has dropped.
-
-
+        _plantWarmth = (_plantMaxWarmth + _plantMinWarmth) / 2;
     }
 
     /// <summary>
@@ -102,9 +89,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
-    #region Change Stat floats
+    #region Change Stat Vars
     /// <summary>
-    /// This float changes the Health of the plant based on the given information (changeTypes: Health, Affection, SoilQuality, Thirst)
+    /// This float changes the Health of the plant based on the given information (change amounts: minus = plus amount, no added operators = minus amount. changeTypes: Health, Affection, SoilQuality, Thirst)
     /// </summary>
     /// <param name="changeType"></param>
     /// <param name="healthchange"></param>

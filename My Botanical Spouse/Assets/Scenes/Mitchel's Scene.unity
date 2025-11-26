@@ -1268,6 +1268,7 @@ MonoBehaviour:
   _plantThirst: 0
   _plantWarmth: 0
   _heaterState: 0
+  _allowGivingAffection: 0
 --- !u!4 &1765900014
 Transform:
   m_ObjectHideFlags: 0
@@ -1582,17 +1583,17 @@ PrefabInstance:
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9119964
+      value: -18.39
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6400251
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6551201
+      value: 5.16
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
