@@ -193,4 +193,44 @@ public class PlantManager : MonoBehaviour
         get{return _allowGivingAffection;}
     }
     #endregion
+
+    #region Link Stats Slider
+    public float GetPlantHealth
+    {
+        get
+        {
+            return _plantHealth;
+        }
+    }
+    public float GetPlantAffection
+    {
+        get
+        {
+            return _plantAffection;
+        }
+    }
+
+    public float GetPlantSoilQuality
+    {
+        get
+        {
+            return _plantSoilQuality;
+        }
+    }
+
+    public float GetPlantThirst
+    {
+        get
+        {
+            return _plantThirst;
+        }
+    }
+    public float GetPlantWarmth
+    {
+        get
+        {
+            return _plantWarmth;
+        }
+    }
+    #endregion
 }
