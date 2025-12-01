@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour
 {
@@ -29,7 +31,12 @@ public class PlantManager : MonoBehaviour
     [SerializeField] bool _heaterState;
     [SerializeField] bool _allowGivingAffection = false;
 
+    [Header("Stat Bars")]
+    [SerializeField] GameObject statBarParent;
+    [SerializeField] List<Slider> statBars = new();
+    [SerializeField] float statBarUpdateDelayTime;
     Coroutine _decreaseStats;
+    Coroutine _updateStatBars;
     #endregion
 
     /// <summary>
@@ -41,7 +48,7 @@ public class PlantManager : MonoBehaviour
         _plantAffection = _plantMaxAffection;
         _plantSoilQuality = _plantMaxSoilQuality;
         _plantThirst = _plantMaxThirst;
-        _plantWarmth = (_plantMaxWarmth + _plantMinWarmth) / 2;
+        _plantWarmth = (_plantMaxWarmth + _plantMinWarmth) / 2; 
     }
 
     /// <summary>
@@ -52,12 +59,25 @@ public class PlantManager : MonoBehaviour
         //if the game has started, change all stats at their rate; If it ends stop the stat change
         if (gameState)
         {
+            foreach (Slider statBar in statBars)
+            {
+                if (statBar.name == "Warmth")
+                {
+                    statBar.minValue = GetPlantstat("Min", statBar.name.ToString());
+                }
+                statBar.maxValue = GetPlantstat("Max", statBar.name.ToString());
+            }
+
+            statBarParent.SetActive(true);
             _decreaseStats = StartCoroutine(DecreaseStats());
+            _updateStatBars = StartCoroutine(StatBarUpdate(statBarUpdateDelayTime));
         }
         else
         {
-            if (_decreaseStats == null) return;
+            if (_decreaseStats == null && _updateStatBars == null) return;
             StopCoroutine(_decreaseStats);
+            StopCoroutine(_updateStatBars);
+            statBarParent.SetActive(false);
         }
     }
 
@@ -87,6 +107,20 @@ public class PlantManager : MonoBehaviour
 
             yield return null;
         }
+    }
+    IEnumerator StatBarUpdate(float delayTime)
+    {
+        while (_plantHealth > 0)
+        {
+            foreach(Slider statBar in statBars)
+            {
+                statBar.value = GetPlantstat("Current", statBar.name.ToString());
+            }
+            
+            yield return new WaitForSeconds(delayTime);
+        }
+
+        yield return null;
     }
 
     #region Change Stat Vars
@@ -215,7 +249,7 @@ public class PlantManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Not a valid state for stat: " + stat);
-                return default;
+                return 0;
             } 
         }
         else if (stat == "Affection")
@@ -231,10 +265,10 @@ public class PlantManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Not a valid state for stat: " + stat);
-                return default;
+                return 0;
             }   
         }
-        else if (stat == "SoilQuality")
+        else if (stat == "Soil Quality")
         {
             if (getState == "Current")
             {
@@ -247,7 +281,7 @@ public class PlantManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Not a valid state for stat: " + stat);
-                return default;
+                return 0;
             }   
         }
         else if (stat == "Thirst")
@@ -263,7 +297,7 @@ public class PlantManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Not a valid state for stat: " + stat);
-                return default;
+                return 0;
             }   
         }
         else if (stat == "Warmth")
@@ -283,13 +317,13 @@ public class PlantManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("Not a valid state for stat: " + stat);
-                return default;
+                return 0;
             }   
         }
         else
         {
             Debug.LogWarning("Not a valid state for stat: " + stat);
-            return default;
+            return 0;
         }
     }
     #endregion
