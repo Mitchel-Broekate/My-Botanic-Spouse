@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dd307ff83060b74589024a5bad95d5d, type: 3}
-  m_Name: HealthKit
+  m_Name: Medicine2
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 0}
+  itemObject: {fileID: 6901021390248296440, guid: e3342e05e77de95409c774911dd2ff50,
+    type: 3}
   itemEffect: Health
   effectAmount: 30

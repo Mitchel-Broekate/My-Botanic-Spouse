@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dd307ff83060b74589024a5bad95d5d, type: 3}
-  m_Name: WateringCan1
+  m_Name: Soil2
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 0}
-  itemEffect: Thirst
-  effectAmount: 15
+  itemObject: {fileID: 4375351617889316979, guid: 0f860d709e8a90f48b7eb0c5d47059ed,
+    type: 3}
+  itemEffect: SoilQuality
+  effectAmount: 30
