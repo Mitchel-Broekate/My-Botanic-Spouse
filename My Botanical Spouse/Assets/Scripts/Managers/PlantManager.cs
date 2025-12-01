@@ -195,41 +195,101 @@ public class PlantManager : MonoBehaviour
     #endregion
 
     #region Link Stats Slider
-    public float GetPlantHealth
+    /// <summary>
+    /// This function gets the stats and states from the plants. (Valid states: Current, Max, Min(Depending on the stat). Valid stats: Health, Affection, SoilQuality, Thirst, Warmth)
+    /// </summary>
+    /// <param name="getState"></param>
+    /// <returns></returns>
+    public float GetPlantstat(string getState, string stat)
     {
-        get
+        if (stat == "Health")
         {
-            return _plantHealth;
+            if (getState == "Current")
+            {
+                return _plantHealth;
+            }
+            else if (getState == "Max")
+            {
+                return _plantMaxHealth;
+            }
+            else
+            {
+                Debug.LogWarning("Not a valid state for stat: " + stat);
+                return default;
+            } 
         }
-    }
-    public float GetPlantAffection
-    {
-        get
+        else if (stat == "Affection")
         {
-            return _plantAffection;
+            if (getState == "Current")
+            {
+                return _plantAffection;
+            }
+            else if (getState == "Max")
+            {
+                return _plantMaxAffection;
+            }
+            else
+            {
+                Debug.LogWarning("Not a valid state for stat: " + stat);
+                return default;
+            }   
         }
-    }
-
-    public float GetPlantSoilQuality
-    {
-        get
+        else if (stat == "SoilQuality")
         {
-            return _plantSoilQuality;
+            if (getState == "Current")
+            {
+                return _plantSoilQuality;
+            }
+            else if (getState == "Max")
+            {
+                return _plantMaxSoilQuality;
+            }
+            else
+            {
+                Debug.LogWarning("Not a valid state for stat: " + stat);
+                return default;
+            }   
         }
-    }
-
-    public float GetPlantThirst
-    {
-        get
+        else if (stat == "Thirst")
         {
-            return _plantThirst;
+            if (getState == "Current")
+            {
+                return _plantThirst;
+            }
+            else if (getState == "Max")
+            {
+                return _plantMaxThirst;
+            }
+            else
+            {
+                Debug.LogWarning("Not a valid state for stat: " + stat);
+                return default;
+            }   
         }
-    }
-    public float GetPlantWarmth
-    {
-        get
+        else if (stat == "Warmth")
         {
-            return _plantWarmth;
+            if (getState == "Current")
+            {
+                return _plantWarmth;
+            }
+            else if (getState == "Max")
+            {
+                return _plantMaxWarmth;
+            }
+            else if (getState == "Min")
+            {
+                return _plantMinWarmth;
+            }
+            else
+            {
+                Debug.LogWarning("Not a valid state for stat: " + stat);
+                return default;
+            }   
+        }
+        else
+        {
+            Debug.LogWarning("Not a valid state for stat: " + stat);
+            return default;
         }
     }
     #endregion
