@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class TEMPGameManagerActivate : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    #region Vars
     [SerializeField] PlantManager plantManager;
+    [SerializeField] int motivationPoints;
     bool currentGameState;
+    #endregion
 
     public void ChangeGameState()
     {
@@ -12,5 +15,17 @@ public class TEMPGameManagerActivate : MonoBehaviour
         plantManager.SetPlantState(currentGameState);
 
         Debug.Log("Current Game State: " + currentGameState);
+    }
+
+    public int PlayerMotivationPoints
+    {
+        get
+        {
+            return motivationPoints;
+        }
+        set
+        {
+            motivationPoints = value;
+        }
     }
 }
