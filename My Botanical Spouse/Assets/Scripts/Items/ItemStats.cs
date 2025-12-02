@@ -46,4 +46,9 @@ public class ItemStats : MonoBehaviour
             return _itemCost;
         }
     }
+
+    public void OnInteractTest()
+    {
+        Debug.Log("Interacted");
+    }
 }
