@@ -96,7 +96,7 @@ public class PlantManager : MonoBehaviour
             ChangePlantStats("Thirst", _decreaseRateThirst * dt);
             ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
-            if(_plantAffection < (_plantMaxAffection / 10) * 7 )
+            if(_plantAffection < (_plantMaxAffection / 10) * 8.5f )
             {
                 _allowGivingAffection = true;
             }

@@ -300,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.907
+      value: 2.425
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
@@ -351,11 +351,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7158875086469127155, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -443,12 +438,12 @@ PrefabInstance:
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.242
+      value: 2.827
       objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.109
+      value: 10.18
       objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
@@ -776,7 +771,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
