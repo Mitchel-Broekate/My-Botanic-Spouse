@@ -32,7 +32,7 @@ public class ShopManager : MonoBehaviour
             Debug.Log("Player doesn't have enough MP");
         }
     }
-
+    
     void BuyItem()
     {
         //remove item value amount from player currency

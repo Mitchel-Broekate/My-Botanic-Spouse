@@ -29,6 +29,7 @@ public class PlantManager : MonoBehaviour
 
     [Header("Stat States")]
     [SerializeField] bool _heaterState;
+    [SerializeField] bool _beingWatered;
     [SerializeField] bool _allowGivingAffection = false;
 
     [Header("Stat Bars")]
@@ -93,7 +94,10 @@ public class PlantManager : MonoBehaviour
 
             ChangePlantStats("Affection", _decreaseRateAffection * dt);
             ChangePlantStats("SoilQuality", _decreaseRateSoilQuality * dt);
-            ChangePlantStats("Thirst", _decreaseRateThirst * dt);
+            if(!_beingWatered)
+            {
+                ChangePlantStats("Thirst", _decreaseRateThirst * dt);
+            }
             ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
             if(_plantAffection < (_plantMaxAffection / 10) * 8.5f )
@@ -220,6 +224,12 @@ public class PlantManager : MonoBehaviour
     {
         _heaterState = newState;
         return _heaterState;
+    }
+
+    public bool BeingWatered(bool newState)
+    {
+        _beingWatered = newState;
+        return _beingWatered;
     }
 
     public bool AllowGivingAffection

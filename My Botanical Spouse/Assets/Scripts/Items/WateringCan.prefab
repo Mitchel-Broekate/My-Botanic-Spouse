@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2672302907835157896}
   - component: {fileID: 3634110752864023078}
   - component: {fileID: -2214163139322040537}
+  - component: {fileID: 1716312069754709847}
   - component: {fileID: -4666189732251236635}
   - component: {fileID: -3700163143118266884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WateringCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,10 +33,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.20804, y: 0.20804, z: 0.20804}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2597437458908120258}
+  - {fileID: 7543515580591285944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8604862376185116127
@@ -124,6 +126,22 @@ MonoBehaviour:
   _statEffect: Thirst
   _effectAmount: 0
   _itemCost: 100
+--- !u!114 &1716312069754709847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234494293137946639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1814b2e691a89a4896ad97b680025d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waterAmount: 100
+  pourThreshold: 45
+  _waterPoint: {fileID: 1262593375628742635}
+  _isPouring: 0
 --- !u!54 &-4666189732251236635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -315,6 +333,37 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!1 &6159433670295712992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7543515580591285944}
+  m_Layer: 6
+  m_Name: WaterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7543515580591285944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159433670295712992}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.43116325, w: 0.90227395}
+  m_LocalPosition: {x: 0.456, y: 0.514, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1262593375628742635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 51.083}
 --- !u!1 &6897658349759229001
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2597437458908120258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,10 +388,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6897658349759229001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.3801773, y: 0.32663217, z: -0.013306471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1262593375628742635}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
