@@ -138,9 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1814b2e691a89a4896ad97b680025d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waterAmount: 100
-  pourThreshold: 45
-  _waterPoint: {fileID: 1262593375628742635}
+  _pourPoint: {fileID: 7543515580591285944}
+  _pourAngleThreshold: 45
+  _maxWater: 100
+  _currentWater: 100
+  _pourRate: 10
+  _pourCheckDistance: 0.5
+  _plantLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  mpAmount: 20
+  mpCooldownTime: 1
   _isPouring: 0
 --- !u!54 &-4666189732251236635
 Rigidbody:
@@ -285,7 +293,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 2597437458908120258}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -388,10 +396,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6897658349759229001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.3801773, y: 0.32663217, z: -0.013306471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1262593375628742635}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
