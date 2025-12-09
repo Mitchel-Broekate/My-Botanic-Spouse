@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5116748616252623936, guid: 2633215c6555280438fd26d9a834235f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5238216244106024189, guid: 2633215c6555280438fd26d9a834235f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1394,56 +1399,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 1483128794761045162, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 100MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 1613617464702610447, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Fertilizer MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078842680000526146, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 10.4
-      objectReference: {fileID: 0}
     - target: {fileID: 2235158799271957132, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 2452356138622193200, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 200MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2588458117576550390, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Bandage MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2703865878748764707, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Medkit MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2886111845037531628, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 600MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684883647643162185, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Tank (Big) MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993351304914944963, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 300MP
-      objectReference: {fileID: 0}
     - target: {fileID: 4113290913007000778, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_Name
@@ -1454,25 +1414,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 5315475768338255909, guid: 55b3e1fd25fd96f47aa98923b159e265,
+    - target: {fileID: 4329642968151294924, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_Name
-      value: Fertilizer 2 MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 5997085592891866655, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Watering Can MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 6867794810865928174, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 200MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 7019314192307711018, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 50MP
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Soil Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 7756054138026135627, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
@@ -1484,29 +1429,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 8569402223865850603, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_text
-      value: 500MP
-      objectReference: {fileID: 0}
-    - target: {fileID: 8677657670146648586, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Tank(Small) MP
-      objectReference: {fileID: 0}
     - target: {fileID: 8734455854974225415, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 9041384881550778122, guid: 55b3e1fd25fd96f47aa98923b159e265,
+    - target: {fileID: 8734455854974225415, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -12.1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Soil
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3774353685409880707, guid: 55b3e1fd25fd96f47aa98923b159e265, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55b3e1fd25fd96f47aa98923b159e265, type: 3}

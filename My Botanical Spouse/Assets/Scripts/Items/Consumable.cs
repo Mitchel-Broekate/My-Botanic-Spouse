@@ -3,6 +3,7 @@ using UnityEngine;
 public class Consumable : MonoBehaviour
 {
     #region Vars
+    [SerializeField] LayerMask layerMask;
     string _statEffect;
     float _effectAmount;
     GameManager gameManager;
@@ -29,7 +30,7 @@ public class Consumable : MonoBehaviour
     /// <param name="other"></param>
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == LayerMask.GetMask("Plant"))
+        if (other.gameObject.layer == layerMask)
         {
             _statEffect = itemStats.StatEffect;
             _effectAmount = itemStats.EffectAmount;
@@ -40,10 +41,10 @@ public class Consumable : MonoBehaviour
                 return;
             }
 
-            other.gameObject.GetComponent<PlantManager>().ChangePlantStats(_statEffect, _effectAmount);
+            other.transform.parent.GetComponent<PlantManager>().ChangePlantStats(_statEffect, _effectAmount);
             gameManager.PlayerMotivationPoints += itemStats.GetMotivationPoints;
             //Create effects
-            Destroy(gameObject);
+            Destroy(gameObject, 0.3f);
         }
     }
 

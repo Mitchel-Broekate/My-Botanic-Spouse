@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -327937339676883390}
   - component: {fileID: -8348557378714470513}
   - component: {fileID: 605313655258285281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,6 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36b12b48a908e24abb65c7f087bdb7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &-8348557378714470513
 Rigidbody:
   m_ObjectHideFlags: 0

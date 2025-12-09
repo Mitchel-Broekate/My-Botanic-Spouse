@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1716312069754709847}
   - component: {fileID: -4666189732251236635}
   - component: {fileID: -3700163143118266884}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WateringCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7543515580591285944}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WaterPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2597437458908120258}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
