@@ -14,12 +14,16 @@ public class ShopManager : MonoBehaviour
     #endregion
 
     #region Buying process
+    /// <summary>
+    /// Checks if the player has enough MP to buy the item
+    /// </summary>
     void CheckCanBuyItem()
     {
         //get player currency
         currentMP = gameManager.PlayerMotivationPoints;
         //get item value
         itemCost = itemToBuy.GetComponent<ItemStats>().GetItemCost;
+
         //compare and see if player can buy the item
         //buy item void or give message that player can't buy the item
         if(itemCost <= currentMP)
@@ -33,14 +37,15 @@ public class ShopManager : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Removes the MP from the player and spawns the item 
+    /// </summary>
     void BuyItem()
     {
         //remove item value amount from player currency
         gameManager.PlayerMotivationPoints -= itemCost;
-        //get item to spawn
-        Instantiate(itemToBuy, shopItemSpawnpoint.position, quaternion.identity);
         //spawn item at spawnpoint
-
+        Instantiate(itemToBuy, shopItemSpawnpoint.position, quaternion.identity);
     }
     #endregion
 

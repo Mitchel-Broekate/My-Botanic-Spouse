@@ -6,18 +6,23 @@ public class WaterTank : MonoBehaviour
     #region Vars
     [Header("Frame Detection")]
     [SerializeField] LayerMask _frameLayer;
+    GameObject waterTank;
     
     [Header("Timer Conditions")]
-    float timerDuration;
+    [Tooltip("Time in seconds")]
+    [SerializeField] float timerDuration;
     bool _isTimerActive;
 
     ItemStats itemStats;
+    GameManager gameManager;
+    PlantManager plantManager;
     XRGrabInteractable _xRGrabInteractable;
 
     void Start()
     {
         itemStats = GetComponent<ItemStats>();
         _xRGrabInteractable = GetComponent<XRGrabInteractable>();
+        gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
     }
 
     void Update()
@@ -40,13 +45,17 @@ public class WaterTank : MonoBehaviour
     {
         if(collision.gameObject.layer == _frameLayer)
         {
+            waterTank = collision.gameObject;
+
             _xRGrabInteractable.enabled = false;
 
             //change pos, rot, and parent
-            transform.parent = collision.transform;
-            transform.position = collision.transform.position;
-            transform.rotation = collision.transform.rotation;
+            transform.parent = waterTank.transform;
+            transform.position = waterTank.transform.position;
+            transform.rotation = waterTank.transform.rotation;
 
+            plantManager = waterTank.transform.parent.GetComponent<PlantManager>();
+            
             //activate timer + conditions
             _isTimerActive = true;
         }
@@ -60,6 +69,8 @@ public class WaterTank : MonoBehaviour
         timerDuration -= Time.deltaTime;
         if(timerDuration <= 0)
         {
+            //start thirst drain again
+            plantManager.BeingWatered(false);
             //do particle
             //destroy object
         }
@@ -69,10 +80,21 @@ public class WaterTank : MonoBehaviour
         }
     }
 
-    void WaterTankConditions()
-    {
-        
-    }
     //add mp per ...
     //stop decreasing water for plant
+
+    /// <summary>
+    /// Stops the thirst drain and gives mp overtime
+    /// </summary>
+    void WaterTankConditions()
+    {
+        plantManager.BeingWatered(true);
+
+        float amountToAdd =  itemStats.GetMotivationPoints * Time.deltaTime;
+        if(amountToAdd >= 1)
+        {
+            int whole = Mathf.FloorToInt(amountToAdd);
+            gameManager.PlayerMotivationPoints += whole;
+        }
+    }
 }
