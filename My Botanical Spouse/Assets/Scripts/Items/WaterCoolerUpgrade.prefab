@@ -66,9 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895352df6500ff147bb306984aee4124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  _frameTag: Frame
   timerDuration: 120
 --- !u!54 &-3421982445572513919
 Rigidbody:

@@ -50,6 +50,11 @@ public class PlantManager : MonoBehaviour
         _plantSoilQuality = _plantMaxSoilQuality;
         _plantThirst = _plantMaxThirst;
         _plantWarmth = (_plantMaxWarmth + _plantMinWarmth) / 2; 
+
+        if(statBarParent.activeInHierarchy)
+        {    
+            statBarParent.SetActive(false);
+        }
     }
 
     /// <summary>

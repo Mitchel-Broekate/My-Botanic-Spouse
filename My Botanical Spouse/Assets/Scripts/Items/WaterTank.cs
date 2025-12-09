@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -5,7 +6,7 @@ public class WaterTank : MonoBehaviour
 {
     #region Vars
     [Header("Frame Detection")]
-    [SerializeField] LayerMask _frameLayer;
+    [SerializeField] string _frameTag;
     GameObject waterTank;
     
     [Header("Timer Conditions")]
@@ -43,8 +44,12 @@ public class WaterTank : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == _frameLayer)
+        Debug.Log("Collided");
+
+        if(collision.gameObject.CompareTag(_frameTag))
         {
+            Debug.Log("Layer = frame");
+
             waterTank = collision.gameObject;
 
             _xRGrabInteractable.enabled = false;

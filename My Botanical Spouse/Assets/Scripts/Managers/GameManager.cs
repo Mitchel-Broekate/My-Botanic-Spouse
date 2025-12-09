@@ -4,10 +4,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region Vars
-    [SerializeField] List<PlantManager> plantManagers = new();
+    [Header("Player Info")]
     [SerializeField] int motivationPoints;
+
+    [Header("Plant Info")]
+    [SerializeField]GameObject plantParent;
+    List<PlantManager> plantManagers = new();
+    
     bool currentGameState;
     #endregion
+
+    void Start()
+    {
+        //TEMP gets all the PlantManagers in the scene
+        GetPlantManagers();
+        
+        //sets the game state to active at the start
+        ChangeGameState();
+    }
 
     #region Player functions
     /// <summary>
@@ -41,6 +55,16 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Current Game State: " + currentGameState);
+    }
+
+    void GetPlantManagers()
+    {
+        for(int i = 0; plantParent.transform.childCount > i; i++)
+        {
+            if(plantManagers.Contains(plantParent.transform.GetChild(i).GetComponent<PlantManager>())) return;
+
+            plantManagers.Add(plantParent.transform.GetChild(i).GetComponent<PlantManager>());
+        }
     }
     
     //Level stuff
