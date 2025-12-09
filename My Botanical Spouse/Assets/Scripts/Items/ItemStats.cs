@@ -20,6 +20,7 @@ public class ItemStats : MonoBehaviour
         xRGrabInteractable.interactionManager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
     }
 
+    #region Getters/Setters  
     /// <summary>
     /// Getter/Setter for the stat effect
     /// </summary>
@@ -71,4 +72,5 @@ public class ItemStats : MonoBehaviour
             return _motivationPoints;
         }
     }
+    #endregion
 }

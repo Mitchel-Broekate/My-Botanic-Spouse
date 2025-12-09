@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour
         //buy item void or give message that player can't buy the item
         if(itemCost <= currentMP)
         {
-            BuyItem();    
+            SpawnItem();    
         }
         else
         {
@@ -40,7 +40,7 @@ public class ShopManager : MonoBehaviour
     /// <summary>
     /// Removes the MP from the player and spawns the item 
     /// </summary>
-    void BuyItem()
+    void SpawnItem()
     {
         //remove item value amount from player currency
         gameManager.PlayerMotivationPoints -= itemCost;
