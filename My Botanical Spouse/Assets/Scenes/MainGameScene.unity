@@ -1271,6 +1271,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1534925032636092272, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_Name
+      value: Bandage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391545804454128651, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_Name
+      value: Medkit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774353685409880707, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_Name
+      value: Water Cooler
+      objectReference: {fileID: 0}
     - target: {fileID: 4113290913007000778, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_Name
@@ -1295,6 +1310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 15.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285459836690097884, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_Name
+      value: Watering Can
       objectReference: {fileID: 0}
     - target: {fileID: 7122941275502263383, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
