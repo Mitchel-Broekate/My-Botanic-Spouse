@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8553937, y: 0.5753172, z: 0.36927375}
+  m_Center: {x: -0.0027286801, y: 0.3017581, z: 0.0018840615}
 --- !u!114 &-6064927551252621065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   _statEffect: SoilQuality
   _effectAmount: 50
   _itemCost: 300
+  _motivationPoints: 100
 --- !u!114 &705201509305752448
 MonoBehaviour:
   m_ObjectHideFlags: 0

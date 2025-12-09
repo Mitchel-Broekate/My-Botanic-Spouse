@@ -126,6 +126,7 @@ MonoBehaviour:
   _statEffect: Thirst
   _effectAmount: 0
   _itemCost: 100
+  _motivationPoints: 20
 --- !u!114 &1716312069754709847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,6 @@ MonoBehaviour:
   _plantLayer:
     serializedVersion: 2
     m_Bits: 128
-  mpAmount: 20
   mpCooldownTime: 1
   _isPouring: 0
 --- !u!54 &-4666189732251236635
@@ -227,19 +227,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -2214163139322040537}
-        m_TargetAssemblyTypeName: ItemStats, Assembly-CSharp
-        m_MethodName: OnInteractTest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []

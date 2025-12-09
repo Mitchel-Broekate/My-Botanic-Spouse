@@ -124,6 +124,7 @@ MonoBehaviour:
   _statEffect: Health
   _effectAmount: 50
   _itemCost: 500
+  _motivationPoints: 0
 --- !u!114 &145234866875095742
 MonoBehaviour:
   m_ObjectHideFlags: 0

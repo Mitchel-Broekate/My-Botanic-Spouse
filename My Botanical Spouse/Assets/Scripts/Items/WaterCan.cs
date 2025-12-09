@@ -1,9 +1,9 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class WaterCan : MonoBehaviour
 {
+    #region Vars
     [Header("Tilt Settings")]
     [SerializeField] Transform _pourPoint;
     [SerializeField] float _pourAngleThreshold = 45f;
@@ -18,14 +18,15 @@ public class WaterCan : MonoBehaviour
     [SerializeField] LayerMask _plantLayer;
 
     [Header("Player Conditions")]
-    [SerializeField] int mpAmount;
     [SerializeField] float mpCooldownTime;
 
     [Header("Pour State")]
     [SerializeField] bool _isPouring = false;
 
     GameManager gameManager;
+    ItemStats itemStats;
     bool canAddMP = true;
+    #endregion
 
     /// <summary>
     /// Links the Game Manager
@@ -34,6 +35,7 @@ public class WaterCan : MonoBehaviour
     {
         //Add the Game Manager object here
         gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
+        itemStats = GetComponent<ItemStats>();
     }
 
     /// <summary>
@@ -84,10 +86,10 @@ public class WaterCan : MonoBehaviour
         if (plantScript != null)
         {
             plantScript.ChangePlantStats("Thirst", -_pourRate * Time.deltaTime);
-            //start coroutine (add money cooldown)
+
             if(canAddMP)
             {
-               gameManager.PlayerMotivationPoints += mpAmount;
+               gameManager.PlayerMotivationPoints += itemStats.GetMotivationPoints;
                StartCoroutine(AddMPCooldown(mpCooldownTime)); 
             }
         }
