@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!54 &69038427185198645
 Rigidbody:
   m_ObjectHideFlags: 0

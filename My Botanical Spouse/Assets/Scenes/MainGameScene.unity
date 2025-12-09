@@ -255,6 +255,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7823652690552569450, guid: 2633215c6555280438fd26d9a834235f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8335933730867340244, guid: 2633215c6555280438fd26d9a834235f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1414,11 +1419,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 4329642968151294924, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Soil Upgrade
-      objectReference: {fileID: 0}
     - target: {fileID: 7756054138026135627, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1434,11 +1434,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
-    - target: {fileID: 8734455854974225415, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Soil
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
