@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99580ef35a60f6f419c7a9f74edc7671, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 074db30c31f3b64418a909babb9943e3, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.5, y: 17.1}
+  m_AnchoredPosition: {x: 76.4, y: 15.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8443014725999005011
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 4.5
+  m_fontSizeBase: 4.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 8332943902387962533}
   - component: {fileID: 1059529210182139110}
   m_Layer: 0
-  m_Name: Fertilizer (1)
+  m_Name: Bandage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8332943902387962533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Medicine
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1613617464702610447
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +629,7 @@ GameObject:
   - component: {fileID: 3916630388689500984}
   - component: {fileID: 1098878371042324849}
   m_Layer: 0
-  m_Name: Extra potent fertilizer (1)
+  m_Name: Medkit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3916630388689500984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Medicine Upgrade
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2588458117576550390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7381604068579012227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Water Cooler
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2988949987022491798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1275,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4429634321719292691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Water Cooler Upgrade
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3270327428386027922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1702,7 @@ GameObject:
   - component: {fileID: 1358721972155089149}
   - component: {fileID: 7130267447267504930}
   m_Layer: 0
-  m_Name: Tank Big (2)
+  m_Name: Water Cooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,7 +1964,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7612028113187674145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fertilizer Upgrade
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4955102476808045232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,7 +2935,7 @@ GameObject:
   - component: {fileID: 8636600164260645551}
   - component: {fileID: 2235158799271957132}
   m_Layer: 0
-  m_Name: Tank Small (1)
+  m_Name: Watering Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2983,7 +3043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8636600164260645551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Watering Can
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6784157073281373683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,7 +3177,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7363827252848022472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fertilizer
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6938499388643291634
 GameObject:
   m_ObjectHideFlags: 0

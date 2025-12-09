@@ -1271,57 +1271,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1534925032636092272, guid: 55b3e1fd25fd96f47aa98923b159e265,
+    - target: {fileID: 1059529210182139110, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_Name
-      value: Bandage
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391545804454128651, guid: 55b3e1fd25fd96f47aa98923b159e265,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
+    - target: {fileID: 1098878371042324849, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_Name
-      value: Medkit
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774353685409880707, guid: 55b3e1fd25fd96f47aa98923b159e265,
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
+    - target: {fileID: 2235158799271957132, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_Name
-      value: Water Cooler
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
     - target: {fileID: 4113290913007000778, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 4369503520869216649, guid: 55b3e1fd25fd96f47aa98923b159e265,
+    - target: {fileID: 4329642968151294924, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
-      propertyPath: m_fontSize
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369503520869216649, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467346993078470077, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 76.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467346993078470077, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 15.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285459836690097884, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Name
-      value: Watering Can
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122941275502263383, guid: 55b3e1fd25fd96f47aa98923b159e265,
-        type: 3}
-      propertyPath: m_Sprite
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 21300000, guid: 074db30c31f3b64418a909babb9943e3,
+      objectReference: {fileID: 1409043633}
+    - target: {fileID: 7756054138026135627, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
+    - target: {fileID: 7802397462480845954, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
+    - target: {fileID: 8734455854974225415, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409043633}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1663,6 +1652,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70086fa3eddc37941aa6dbdd14fd7cd7, type: 3}
+--- !u!114 &1409043633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8656612547121328200, guid: 70086fa3eddc37941aa6dbdd14fd7cd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1409043632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f137c7372f51c14281564c177942f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1437602128
 GameObject:
   m_ObjectHideFlags: 0
