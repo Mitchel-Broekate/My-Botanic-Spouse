@@ -70,6 +70,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   timerDuration: 120
+  mpCooldownTime: 1.5
 --- !u!54 &-3421982445572513919
 Rigidbody:
   m_ObjectHideFlags: 0

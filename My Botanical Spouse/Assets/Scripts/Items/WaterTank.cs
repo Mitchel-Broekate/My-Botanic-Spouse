@@ -1,4 +1,4 @@
-using TMPro;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -7,23 +7,27 @@ public class WaterTank : MonoBehaviour
     #region Vars
     [Header("Frame Detection")]
     [SerializeField] LayerMask _layerMask;
-    GameObject waterTank;
+    GameObject frame;
     
     [Header("Timer Conditions")]
     [Tooltip("Time in seconds")]
-    [SerializeField] float timerDuration;
+    [SerializeField] float _timerDuration;
     bool _isTimerActive;
 
-    ItemStats itemStats;
-    GameManager gameManager;
-    PlantManager plantManager;
+    [Header("MP Config")]
+    [SerializeField] float _mpCooldownTime;
+    bool _canAddMP;
+
+    ItemStats _itemStats;
+    GameManager _gameManager;
+    PlantManager _plantManager;
     XRGrabInteractable _xRGrabInteractable;
 
     void Start()
     {
-        itemStats = GetComponent<ItemStats>();
+        _itemStats = GetComponent<ItemStats>();
         _xRGrabInteractable = GetComponent<XRGrabInteractable>();
-        gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
+        _gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
     }
 
     void Update()
@@ -34,7 +38,7 @@ public class WaterTank : MonoBehaviour
         }
     }
     #endregion
-    
+
     //place tank on frame
 
     /// <summary>
@@ -43,19 +47,19 @@ public class WaterTank : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter(Collision collision)
     {
-
         if(collision.gameObject.layer == LayerMask.NameToLayer("Frame"))
         {
-            waterTank = collision.gameObject;
+            frame = collision.gameObject;
 
             _xRGrabInteractable.enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
 
             //change pos, rot, and parent
-            transform.parent = waterTank.transform;
-            transform.position = waterTank.transform.position;
-            transform.rotation = waterTank.transform.rotation;
+            transform.parent = frame.transform;
+            transform.localPosition = Vector3.zero;
+            transform.rotation = frame.transform.rotation;
 
-            plantManager = waterTank.transform.parent.GetComponent<PlantManager>();
+            _plantManager = frame.transform.parent.GetComponent<PlantManager>();
             
             //activate timer + conditions
             _isTimerActive = true;
@@ -67,13 +71,13 @@ public class WaterTank : MonoBehaviour
     /// </summary>
     void DurabilityTimer()
     {
-        timerDuration -= Time.deltaTime;
-        if(timerDuration <= 0)
+        _timerDuration -= Time.deltaTime;
+        if(_timerDuration <= 0)
         {
             //start thirst drain again
-            plantManager.BeingWatered(false);
+            _plantManager.BeingWatered(false);
             //do particle
-            //destroy object
+            Destroy(gameObject, 0.3f);
         }
         else
         {
@@ -81,21 +85,32 @@ public class WaterTank : MonoBehaviour
         }
     }
 
-    //add mp per ...
-    //stop decreasing water for plant
-
     /// <summary>
     /// Stops the thirst drain and gives mp overtime
     /// </summary>
     void WaterTankConditions()
     {
-        plantManager.BeingWatered(true);
-
-        float amountToAdd =  itemStats.GetMotivationPoints * Time.deltaTime;
-        if(amountToAdd >= 1)
+        if(!_plantManager.checkBeingWatered)
         {
-            int whole = Mathf.FloorToInt(amountToAdd);
-            gameManager.PlayerMotivationPoints += whole;
+            _plantManager.BeingWatered(true);
         }
+
+        if(_canAddMP)
+        {
+            _gameManager.PlayerMotivationPoints += _itemStats.GetMotivationPoints;
+            StartCoroutine(AddMPCooldown(_mpCooldownTime)); 
+        }
+    }
+    
+    /// <summary>
+    /// Disables the AddMP Function for a given duration
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <returns></returns>
+    IEnumerator AddMPCooldown(float duration)
+    {
+        _canAddMP = false;
+        yield return new WaitForSeconds(duration);
+        _canAddMP = true;
     }
 }

@@ -18,14 +18,14 @@ public class WaterCan : MonoBehaviour
     [SerializeField] LayerMask _plantLayer;
 
     [Header("Player Conditions")]
-    [SerializeField] float mpCooldownTime;
+    [SerializeField] float _mpCooldownTime;
 
     [Header("Pour State")]
     [SerializeField] bool _isPouring = false;
 
-    GameManager gameManager;
-    ItemStats itemStats;
-    bool canAddMP = true;
+    GameManager _gameManager;
+    ItemStats _itemStats;
+    bool _canAddMP = true;
     #endregion
 
     /// <summary>
@@ -34,8 +34,8 @@ public class WaterCan : MonoBehaviour
     void Start()
     {
         //Add the Game Manager object here
-        gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
-        itemStats = GetComponent<ItemStats>();
+        _gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
+        _itemStats = GetComponent<ItemStats>();
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ public class WaterCan : MonoBehaviour
         if (!_isPouring)
         {
             _isPouring = true;
-            // You could start a particle system here
+            // start particles
         }
 
         DrainWater();
@@ -87,10 +87,10 @@ public class WaterCan : MonoBehaviour
         {
             plantScript.ChangePlantStats("Thirst", -_pourRate * Time.deltaTime);
 
-            if(canAddMP)
+            if(_canAddMP)
             {
-               gameManager.PlayerMotivationPoints += itemStats.GetMotivationPoints;
-               StartCoroutine(AddMPCooldown(mpCooldownTime)); 
+               _gameManager.PlayerMotivationPoints += _itemStats.GetMotivationPoints;
+               StartCoroutine(AddMPCooldown(_mpCooldownTime)); 
             }
         }
     }
@@ -115,11 +115,16 @@ public class WaterCan : MonoBehaviour
         _currentWater -= _pourRate * Time.deltaTime;
         _currentWater = Mathf.Clamp(_currentWater, 0, _maxWater);
     }
-
+    
+    /// <summary>
+    /// Disables the AddMP Function for a given duration
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <returns></returns>
     IEnumerator AddMPCooldown(float duration)
     {
-        canAddMP = false;
+        _canAddMP = false;
         yield return new WaitForSeconds(duration);
-        canAddMP = true;
+        _canAddMP = true;
     }
 }

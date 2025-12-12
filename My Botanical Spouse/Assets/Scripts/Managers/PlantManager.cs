@@ -33,9 +33,9 @@ public class PlantManager : MonoBehaviour
     [SerializeField] bool _allowGivingAffection = false;
 
     [Header("Stat Bars")]
-    [SerializeField] GameObject statBarParent;
-    [SerializeField] List<Slider> statBars = new();
-    [SerializeField] float statBarUpdateDelayTime;
+    [SerializeField] GameObject _statBarParent;
+    [SerializeField] List<Slider> _statBars = new();
+    [SerializeField] float _statBarUpdateDelayTime;
     Coroutine _decreaseStats;
     Coroutine _updateStatBars;
     #endregion
@@ -51,9 +51,9 @@ public class PlantManager : MonoBehaviour
         _plantThirst = _plantMaxThirst;
         _plantWarmth = (_plantMaxWarmth + _plantMinWarmth) / 2; 
 
-        if(statBarParent.activeInHierarchy)
+        if(_statBarParent.activeInHierarchy)
         {    
-            statBarParent.SetActive(false);
+            _statBarParent.SetActive(false);
         }
     }
 
@@ -65,7 +65,7 @@ public class PlantManager : MonoBehaviour
         //if the game has started, change all stats at their rate; If it ends stop the stat change
         if (gameState)
         {
-            foreach (Slider statBar in statBars)
+            foreach (Slider statBar in _statBars)
             {
                 if (statBar.name == "Warmth")
                 {
@@ -74,16 +74,16 @@ public class PlantManager : MonoBehaviour
                 statBar.maxValue = GetPlantstat("Max", statBar.name.ToString());
             }
 
-            statBarParent.SetActive(true);
+            _statBarParent.SetActive(true);
             _decreaseStats = StartCoroutine(DecreaseStats());
-            _updateStatBars = StartCoroutine(StatBarUpdate(statBarUpdateDelayTime));
+            _updateStatBars = StartCoroutine(StatBarUpdate(_statBarUpdateDelayTime));
         }
         else
         {
             if (_decreaseStats == null && _updateStatBars == null) return;
             StopCoroutine(_decreaseStats);
             StopCoroutine(_updateStatBars);
-            statBarParent.SetActive(false);
+            _statBarParent.SetActive(false);
         }
     }
 
@@ -121,7 +121,7 @@ public class PlantManager : MonoBehaviour
     {
         while (_plantHealth > 0)
         {
-            foreach(Slider statBar in statBars)
+            foreach(Slider statBar in _statBars)
             {
                 statBar.value = GetPlantstat("Current", statBar.name.ToString());
             }
@@ -225,18 +225,42 @@ public class PlantManager : MonoBehaviour
         return _plantHealth;
     }
     
+    /// <summary>
+    /// Allows the change for the heater setting (Cold or warm)
+    /// </summary>
+    /// <param name="newState"></param>
+    /// <returns></returns>
     public bool HeaterState(bool newState)
     {
         _heaterState = newState;
         return _heaterState;
     }
 
+    /// <summary>
+    /// Allows the change of the beingwatered state of the plant
+    /// </summary>
+    /// <param name="newState"></param>
+    /// <returns></returns>
     public bool BeingWatered(bool newState)
     {
         _beingWatered = newState;
         return _beingWatered;
     }
 
+    /// <summary>
+    /// Shows if the plant is being watered by a tank or not
+    /// </summary>
+    public bool checkBeingWatered
+    {
+        get
+        {
+            return _beingWatered;
+        }
+    }
+
+    /// <summary>
+    /// Shows the current availability of the affection stat
+    /// </summary>
     public bool AllowGivingAffection
     {
         get{return _allowGivingAffection;}
