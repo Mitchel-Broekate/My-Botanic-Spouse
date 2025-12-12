@@ -22,8 +22,6 @@ public class Consumable : MonoBehaviour
         {
             Debug.LogWarning("Game Manager not found");
         }
-
-        _layerMask = LayerMask.GetMask("Plant");
     }
 
     /// <summary>
@@ -32,11 +30,8 @@ public class Consumable : MonoBehaviour
     /// <param name="other"></param>
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == _layerMask)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Plant"))
         {
-
-            Debug.Log("Collided with plant");
-
             _statEffect = _itemStats.StatEffect;
             _effectAmount = _itemStats.EffectAmount;
 
@@ -46,7 +41,7 @@ public class Consumable : MonoBehaviour
                 return;
             }
 
-            collision.transform.parent.GetComponent<PlantManager>().ChangePlantStats(_statEffect, _effectAmount);
+            collision.transform.parent.GetComponent<PlantManager>().ChangePlantStats(_statEffect, -_effectAmount);
             _gameManager.PlayerMotivationPoints += _itemStats.GetMotivationPoints;
 
             Debug.Log("Gave effects");

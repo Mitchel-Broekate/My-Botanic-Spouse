@@ -24,8 +24,6 @@ public class WaterTank : MonoBehaviour
         itemStats = GetComponent<ItemStats>();
         _xRGrabInteractable = GetComponent<XRGrabInteractable>();
         gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
-
-        _layerMask = LayerMask.GetMask("Plant");
     }
 
     void Update()
@@ -35,9 +33,8 @@ public class WaterTank : MonoBehaviour
             DurabilityTimer();
         }
     }
-
-
     #endregion
+    
     //place tank on frame
 
     /// <summary>
@@ -46,7 +43,8 @@ public class WaterTank : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == _layerMask)
+
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Frame"))
         {
             waterTank = collision.gameObject;
 
