@@ -6,7 +6,7 @@ public class WaterTank : MonoBehaviour
 {
     #region Vars
     [Header("Frame Detection")]
-    [SerializeField] string _frameTag;
+    [SerializeField] LayerMask _layerMask;
     GameObject waterTank;
     
     [Header("Timer Conditions")]
@@ -24,6 +24,8 @@ public class WaterTank : MonoBehaviour
         itemStats = GetComponent<ItemStats>();
         _xRGrabInteractable = GetComponent<XRGrabInteractable>();
         gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
+
+        _layerMask = LayerMask.GetMask("Plant");
     }
 
     void Update()
@@ -44,12 +46,8 @@ public class WaterTank : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collided");
-
-        if(collision.gameObject.CompareTag(_frameTag))
+        if(collision.gameObject.layer == _layerMask)
         {
-            Debug.Log("Layer = frame");
-
             waterTank = collision.gameObject;
 
             _xRGrabInteractable.enabled = false;

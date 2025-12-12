@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083090760771287905}
   - component: {fileID: 5422979548751137166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlantManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 5846788989910362878}
   - component: {fileID: 8273598964118692698}
   - component: {fileID: 7531169922696565392}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: PetPlantCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,8 +456,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.24561355
+  m_Center: {x: 0, y: 0.18487415, z: -0.069512345}
 --- !u!114 &5846788989910362878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +693,12 @@ PrefabInstance:
     - target: {fileID: 4187089582330791774, guid: 2c1ae081b39e5c449835b739f744bc7b,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187089582330791774, guid: 2c1ae081b39e5c449835b739f744bc7b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Frame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1038,6 +1043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208291619030675224, guid: 8ed1f694741534a4285d78adea549037,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8157020371887035121, guid: 8ed1f694741534a4285d78adea549037,
         type: 3}
