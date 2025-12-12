@@ -1433,10 +1433,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 898970764}
-  - {fileID: 686343710}
-  - {fileID: 2115159830}
   - {fileID: 444460417}
   - {fileID: 2098971843}
+  - {fileID: 2115159830}
+  - {fileID: 686343710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1559,10 +1559,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1427925601}
-  - {fileID: 809745990}
-  - {fileID: 1526815444}
   - {fileID: 657404038}
   - {fileID: 1486730239}
+  - {fileID: 809745990}
+  - {fileID: 1526815444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1872,8 +1872,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: your spouce has been saved
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 62a74933264e1f2498024180a46edec5, type: 2}
+  m_sharedMaterial: {fileID: 6422439036435050442, guid: 62a74933264e1f2498024180a46edec5,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2102,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00000010430813}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.00000020861626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569464771
