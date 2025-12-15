@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -84,10 +83,6 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    //Level stuff
-    //start 1st level at start of the game
-    //spawn plant(s) depending on current level at set locations
-    //if game is over (after timer ends) activate win screen depending on the current level
     public void StartNextLevel()
     {
         if(_currentLevel < 4)
@@ -96,6 +91,7 @@ public class GameManager : MonoBehaviour
             GameObject spawnedPlant = Instantiate(plantPrefab, _plantSpawns[_currentLevel].transform.position, _plantSpawns[_currentLevel].transform.rotation);
             spawnedPlant.transform.parent = _plantParent.transform;
 
+            //gets all active plant's managers
             GetPlantManagers();
 
             //sets the game state to active at the start
