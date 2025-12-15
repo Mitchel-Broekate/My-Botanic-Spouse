@@ -123,14 +123,14 @@ MonoBehaviour:
   _heaterState: 0
   _beingWatered: 0
   _allowGivingAffection: 0
-  statBarParent: {fileID: 2135198160756658738}
-  statBars:
+  _statBarParent: {fileID: 2135198160756658738}
+  _statBars:
   - {fileID: 6233400053694473142}
   - {fileID: 5503250388784487308}
   - {fileID: 2674683929722215377}
   - {fileID: 605039108567859089}
   - {fileID: 5128831398505862457}
-  statBarUpdateDelayTime: 1
+  _statBarUpdateDelayTime: 0
 --- !u!1 &6393952288062501213
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 5846788989910362878}
   - component: {fileID: 8273598964118692698}
   - component: {fileID: 7531169922696565392}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PetPlantCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,12 +693,12 @@ PrefabInstance:
     - target: {fileID: 4187089582330791774, guid: 2c1ae081b39e5c449835b739f744bc7b,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4187089582330791774, guid: 2c1ae081b39e5c449835b739f744bc7b,
         type: 3}
       propertyPath: m_TagString
-      value: Frame
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

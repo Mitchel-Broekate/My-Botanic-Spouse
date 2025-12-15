@@ -1,26 +1,40 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     #region Vars
     [Header("Player Info")]
-    [SerializeField] int motivationPoints;
+    [SerializeField] int _motivationPoints;
 
     [Header("Plant Info")]
-    [SerializeField]GameObject plantParent;
-    List<PlantManager> plantManagers = new();
-    
+    [SerializeField]GameObject plantPrefab;
+    [SerializeField]GameObject _plantParent;
+    List<PlantManager> _plantManagers = new();
+
+    [Header("Level Info")]
+    [SerializeField] float _levelTime;
+    float _currentTime;
+    [SerializeField] bool _timerActive;
+    [SerializeField] int _currentLevel = 0;
+    [SerializeField] List<Transform> _plantSpawns = new();
+
     bool currentGameState;
     #endregion
 
     void Start()
     {
-        //TEMP gets all the PlantManagers in the scene
-        GetPlantManagers();
-        
-        //sets the game state to active at the start
-        ChangeGameState();
+        //Spawns the plants in the game
+        StartNextLevel();
+    }
+
+    void Update()
+    {
+        if(_timerActive)
+        {
+            StartLevelTimer();
+        }
     }
 
     #region Player functions
@@ -31,11 +45,11 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return motivationPoints;
+            return _motivationPoints;
         }
         set
         {
-            motivationPoints = value;
+            _motivationPoints = value;
         }
     }
 
@@ -49,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         currentGameState = !currentGameState;
 
-        foreach(PlantManager manager in plantManagers)
+        foreach(PlantManager manager in _plantManagers)
         {
             manager.SetPlantState(currentGameState);
         }
@@ -57,16 +71,65 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current Game State: " + currentGameState);
     }
 
+    /// <summary>
+    /// Gets all active managers for the plants
+    /// </summary>
     void GetPlantManagers()
     {
-        for(int i = 0; plantParent.transform.childCount > i; i++)
+        for(int i = 0; _plantParent.transform.childCount > i; i++)
         {
-            if(plantManagers.Contains(plantParent.transform.GetChild(i).GetComponent<PlantManager>())) return;
+            if(_plantManagers.Contains(_plantParent.transform.GetChild(i).GetComponent<PlantManager>())) return;
 
-            plantManagers.Add(plantParent.transform.GetChild(i).GetComponent<PlantManager>());
+            _plantManagers.Add(_plantParent.transform.GetChild(i).GetComponent<PlantManager>());
         }
     }
     
     //Level stuff
+    //start 1st level at start of the game
+    //spawn plant(s) depending on current level at set locations
+    //if game is over (after timer ends) activate win screen depending on the current level
+    public void StartNextLevel()
+    {
+        if(_currentLevel < 4)
+        {
+            //instantiate plant at spawn pos in list equal to int i
+            GameObject spawnedPlant = Instantiate(plantPrefab, _plantSpawns[_currentLevel].transform.position, _plantSpawns[_currentLevel].transform.rotation);
+            spawnedPlant.transform.parent = _plantParent.transform;
+
+            GetPlantManagers();
+
+            //sets the game state to active at the start
+            ChangeGameState();
+
+            //start timer
+            _timerActive = true;
+            _currentTime = _levelTime;
+
+            //deactivate level UI if active
+        }
+        else
+        {
+            //win condition ENDGAME
+            _timerActive = false;
+
+            //activate win UI
+        }
+
+        _currentLevel += 1;
+    }
+
+    void StartLevelTimer()
+    {
+        _currentTime -= Time.deltaTime;
+
+        if(_currentTime <= 0)
+        {
+            //win condition LEVEL (activate UI next level)
+
+            _timerActive = false;
+
+            ChangeGameState();
+        }
+    }
     #endregion
 }
