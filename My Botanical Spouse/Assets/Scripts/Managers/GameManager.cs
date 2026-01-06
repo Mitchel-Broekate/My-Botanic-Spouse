@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int _currentLevel = 0;
     [SerializeField] List<Transform> _plantSpawns = new();
 
-    bool currentGameState;
+    bool currentGameState = false;
     #endregion
 
     void Start()
@@ -58,9 +58,9 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Changes the active state of the game (active/inactive)
     /// </summary>
-    public void ChangeGameState()
+    public void ChangeGameState(bool gameState)
     {
-        currentGameState = !currentGameState;
+        currentGameState = gameState;
 
         foreach(PlantManager manager in _plantManagers)
         {
@@ -94,8 +94,9 @@ public class GameManager : MonoBehaviour
             //gets all active plant's managers
             GetPlantManagers();
 
+            Debug.Log("Start Game");
             //sets the game state to active at the start
-            ChangeGameState();
+            ChangeGameState(true);
 
             //start timer
             _timerActive = true;
@@ -122,9 +123,11 @@ public class GameManager : MonoBehaviour
         {
             //win condition LEVEL (activate UI next level)
 
+            Debug.Log("Level won");
+
             _timerActive = false;
 
-            ChangeGameState();
+            ChangeGameState(false);
         }
     }
     #endregion

@@ -75,11 +75,14 @@ public class PlantManager : MonoBehaviour
             }
 
             _statBarParent.SetActive(true);
+
             _decreaseStats = StartCoroutine(DecreaseStats());
             _updateStatBars = StartCoroutine(StatBarUpdate(_statBarUpdateDelayTime));
+
+            Debug.Log("Everything enabled");
         }
         else
-        {
+        {   
             if (_decreaseStats == null && _updateStatBars == null) return;
             StopCoroutine(_decreaseStats);
             StopCoroutine(_updateStatBars);
@@ -105,7 +108,7 @@ public class PlantManager : MonoBehaviour
             }
             ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
-            if(_plantAffection < (_plantMaxAffection / 10) * 8.5f )
+            if(_plantAffection < _plantMaxAffection / 10 * 8.5f )
             {
                 _allowGivingAffection = true;
             }

@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 2674683929722215377}
   - {fileID: 605039108567859089}
   - {fileID: 5128831398505862457}
-  _statBarUpdateDelayTime: 0
+  _statBarUpdateDelayTime: 0.5
 --- !u!1 &6393952288062501213
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,17 +753,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6904218
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6904217
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.6904218
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
@@ -815,10 +815,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -6110538763792136656, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 1.2279962
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.023359023
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.96628714
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 1.2215012
+      objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: ffda9a203c230e44d9d9c49107f76d2e,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.20657036
       objectReference: {fileID: 0}
     - target: {fileID: -41588412819800462, guid: ffda9a203c230e44d9d9c49107f76d2e,
         type: 3}
