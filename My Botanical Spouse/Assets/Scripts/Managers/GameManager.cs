@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Info")]
     [SerializeField] float _levelTime;
-    float _currentTime;
+    [SerializeField] float _currentTime;
     [SerializeField] bool _timerActive;
     [SerializeField] int _currentLevel = 0;
     [SerializeField] List<Transform> _plantSpawns = new();
@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
             _motivationPoints = value;
         }
     }
-
     #endregion
 
     #region Game functions
@@ -61,13 +60,13 @@ public class GameManager : MonoBehaviour
     public void ChangeGameState(bool gameState)
     {
         currentGameState = gameState;
+        Debug.Log("Current Game State: " + currentGameState);
 
         foreach(PlantManager manager in _plantManagers)
         {
+            manager.Init(); // rename
             manager.SetPlantState(currentGameState);
         }
-
-        Debug.Log("Current Game State: " + currentGameState);
     }
 
     /// <summary>
@@ -77,9 +76,10 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; _plantParent.transform.childCount > i; i++)
         {
-            if(_plantManagers.Contains(_plantParent.transform.GetChild(i).GetComponent<PlantManager>())) return;
-
-            _plantManagers.Add(_plantParent.transform.GetChild(i).GetComponent<PlantManager>());
+            if(!_plantManagers.Contains(_plantParent.transform.GetChild(i).GetComponent<PlantManager>()))
+            {
+                _plantManagers.Add(_plantParent.transform.GetChild(i).GetComponent<PlantManager>());
+            }
         }
     }
     
@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
             //start timer
             _timerActive = true;
             _currentTime = _levelTime;
+            _currentLevel++;
 
             //deactivate level UI if active
         }
@@ -111,8 +112,6 @@ public class GameManager : MonoBehaviour
 
             //activate win UI
         }
-
-        _currentLevel += 1;
     }
 
     void StartLevelTimer()

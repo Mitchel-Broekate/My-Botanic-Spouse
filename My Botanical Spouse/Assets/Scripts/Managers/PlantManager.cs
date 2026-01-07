@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour
 {
+    //Didn't use List for ease of access to floats
+
     #region Vars
     [Header("Stat Decrease Rate")]
     [SerializeField] float _decreaseRateAffection;
@@ -43,7 +45,7 @@ public class PlantManager : MonoBehaviour
     /// <summary>
     /// This function will set the stat starting stat values
     /// </summary>
-    void Start()
+    public void Init()
     {
         _plantHealth = _plantMaxHealth;
         _plantAffection = _plantMaxAffection;
@@ -63,6 +65,8 @@ public class PlantManager : MonoBehaviour
     public void SetPlantState(bool gameState)
     {
         //if the game has started, change all stats at their rate; If it ends stop the stat change
+        Debug.Log("SetPlantState state = " + gameState);
+
         if (gameState)
         {
             foreach (Slider statBar in _statBars)
@@ -87,6 +91,8 @@ public class PlantManager : MonoBehaviour
             StopCoroutine(_decreaseStats);
             StopCoroutine(_updateStatBars);
             _statBarParent.SetActive(false);
+
+            Debug.Log("Everything disabled");
         }
     }
 
@@ -98,6 +104,7 @@ public class PlantManager : MonoBehaviour
     {
         while (_plantHealth > 0)
         {
+
             float dt = Time.deltaTime;
 
             ChangePlantStats("Affection", _decreaseRateAffection * dt);
@@ -108,7 +115,7 @@ public class PlantManager : MonoBehaviour
             }
             ChangePlantStats("Warmth", _changeRateWarmth * dt);
 
-            if(_plantAffection < _plantMaxAffection / 10 * 8.5f )
+            if(_plantAffection < _plantMaxAffection / 10 * 8.5f)
             {
                 _allowGivingAffection = true;
             }
@@ -124,6 +131,7 @@ public class PlantManager : MonoBehaviour
     {
         while (_plantHealth > 0)
         {
+
             foreach(Slider statBar in _statBars)
             {
                 statBar.value = GetPlantstat("Current", statBar.name.ToString());
@@ -131,7 +139,6 @@ public class PlantManager : MonoBehaviour
             
             yield return new WaitForSeconds(delayTime);
         }
-
         yield return null;
     }
 
