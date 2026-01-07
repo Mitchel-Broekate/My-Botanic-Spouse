@@ -758,6 +758,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55b3e1fd25fd96f47aa98923b159e265, type: 3}
+--- !u!1001 &645631367762786923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5057248
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.899
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751832834275831583, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834618180094053042, guid: fc21dae991f57f049874b382f6c0a861,
+        type: 3}
+      propertyPath: m_Name
+      value: WaterSplash
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc21dae991f57f049874b382f6c0a861, type: 3}
 --- !u!1001 &2612862754255614235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,3 +1387,4 @@ SceneRoots:
   - {fileID: 2612862754255614235}
   - {fileID: 1039382977}
   - {fileID: 4883036641329064886}
+  - {fileID: 645631367762786923}
