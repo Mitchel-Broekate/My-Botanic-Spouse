@@ -213,6 +213,8 @@ MonoBehaviour:
   _affectionToGive: 15
   motivationAmount: 20
   animator: {fileID: 3595444425442378381}
+  audioSource: {fileID: 0}
+  happy: {fileID: 0}
 --- !u!114 &8273598964118692698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,17 +379,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.9216251
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9216251
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9216251
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
         type: 3}
