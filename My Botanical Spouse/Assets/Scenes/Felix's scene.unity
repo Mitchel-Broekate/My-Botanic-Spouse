@@ -1017,6 +1017,74 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1724038286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.945472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0563537
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.9786043
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 610e62a01f05a6b4285ca7f56cf25788,
+        type: 3}
+      propertyPath: m_Name
+      value: Happy_Plant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 610e62a01f05a6b4285ca7f56cf25788, type: 3}
 --- !u!1001 &2079573047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1099,3 +1167,4 @@ SceneRoots:
   - {fileID: 554103181}
   - {fileID: 1586087916}
   - {fileID: 729726773}
+  - {fileID: 1724038286}
