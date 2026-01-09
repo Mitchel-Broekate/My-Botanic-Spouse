@@ -40,6 +40,8 @@ public class PlantManager : MonoBehaviour
     [SerializeField] float _statBarUpdateDelayTime;
     Coroutine _decreaseStats;
     Coroutine _updateStatBars;
+
+    [SerializeField] Animator animator;
     #endregion
 
     /// <summary>
@@ -122,6 +124,12 @@ public class PlantManager : MonoBehaviour
             else
             {
                 _allowGivingAffection = false;
+            }
+
+            if(_plantHealth < _plantMaxHealth / 2)
+            {
+                //play boywife dying
+                animator.SetBool("LowHP", true);
             }
 
             yield return null;

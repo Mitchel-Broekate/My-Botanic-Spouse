@@ -25,14 +25,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Spawns the plants in the game
-        StartNextLevel();
+        StartLevel();
     }
 
     void Update()
     {
         if(_timerActive)
         {
-            StartLevelTimer();
+            LevelTimer();
         }
     }
 
@@ -83,10 +83,8 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void StartNextLevel()
+    public void StartLevel()
     {
-        if(_currentLevel < 4)
-        {
             //instantiate plant at spawn pos in list equal to int i
             GameObject spawnedPlant = Instantiate(plantPrefab, _plantSpawns[_currentLevel].transform.position, _plantSpawns[_currentLevel].transform.rotation);
             spawnedPlant.transform.parent = _plantParent.transform;
@@ -102,19 +100,9 @@ public class GameManager : MonoBehaviour
             _timerActive = true;
             _currentTime = _levelTime;
             _currentLevel++;
-
-            //deactivate level UI if active
-        }
-        else
-        {
-            //win condition ENDGAME
-            _timerActive = false;
-
-            //activate win UI
-        }
     }
 
-    void StartLevelTimer()
+    void LevelTimer()
     {
         _currentTime -= Time.deltaTime;
 
@@ -127,6 +115,8 @@ public class GameManager : MonoBehaviour
             _timerActive = false;
 
             ChangeGameState(false);
+
+            
         }
     }
     #endregion
