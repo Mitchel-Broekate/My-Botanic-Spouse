@@ -8,6 +8,8 @@ public class PlantGiveAffection : MonoBehaviour
     [SerializeField] int motivationAmount;
 
     [SerializeField] Animator animator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip happy;
 
     void Start()
     {
@@ -26,6 +28,12 @@ public class PlantGiveAffection : MonoBehaviour
 
             //Play cute boywife animation :3 :P :D
             animator.SetTrigger("Happy");
+
+            if(audioSource != null)
+            {
+                audioSource.clip = happy;
+                audioSource.Play();
+            }
         }
         else
         {
