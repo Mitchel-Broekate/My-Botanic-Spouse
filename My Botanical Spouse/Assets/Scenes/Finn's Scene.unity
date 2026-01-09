@@ -894,6 +894,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant Health Bars
       objectReference: {fileID: 0}
+    - target: {fileID: 7208291619030675224, guid: 8ed1f694741534a4285d78adea549037,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9172005169336139008, guid: 8ed1f694741534a4285d78adea549037,
         type: 3}
       propertyPath: m_Pivot.x
