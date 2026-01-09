@@ -39,6 +39,5 @@ public class PlantGiveAffection : MonoBehaviour
         {
             Debug.Log("Can't touch boywife yet");
         }
-
     }
 }

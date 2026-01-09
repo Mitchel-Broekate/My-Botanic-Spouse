@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int _currentLevel = 0;
     [SerializeField] List<Transform> _plantSpawns = new();
 
+    [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject loseScreen;
+
     bool currentGameState = false;
     #endregion
 
@@ -64,7 +67,11 @@ public class GameManager : MonoBehaviour
 
         foreach(PlantManager manager in _plantManagers)
         {
-            manager.Init(); // rename
+            if (gameState)
+            {
+                manager.Init();
+            }
+            
             manager.SetPlantState(currentGameState);
         }
     }
@@ -116,8 +123,19 @@ public class GameManager : MonoBehaviour
 
             ChangeGameState(false);
 
-            
+            AcitvateWinScreen();
         }
     }
     #endregion
+
+
+    public void AcitvateWinScreen()
+    {
+        winScreen.SetActive(true);
+    }
+
+    public void AcitvateLoseScreen()
+    {
+        loseScreen.SetActive(true);
+    }
 }

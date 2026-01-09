@@ -40,6 +40,7 @@ public class PlantManager : MonoBehaviour
     [SerializeField] float _statBarUpdateDelayTime;
     Coroutine _decreaseStats;
     Coroutine _updateStatBars;
+    GameManager gameManager;
 
     [SerializeField] Animator animator;
     #endregion
@@ -59,6 +60,8 @@ public class PlantManager : MonoBehaviour
         {    
             _statBarParent.SetActive(false);
         }
+
+        gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
     }
 
     /// <summary>
@@ -67,7 +70,6 @@ public class PlantManager : MonoBehaviour
     public void SetPlantState(bool gameState)
     {
         //if the game has started, change all stats at their rate; If it ends stop the stat change
-        Debug.Log("SetPlantState state = " + gameState);
 
         if (gameState)
         {
@@ -133,6 +135,13 @@ public class PlantManager : MonoBehaviour
             }
 
             yield return null;
+        }
+
+        if (_plantHealth <= 0)
+        {
+            gameManager.AcitvateWinScreen();
+
+            gameManager.ChangeGameState(false);
         }
     }
     IEnumerator StatBarUpdate(float delayTime)
