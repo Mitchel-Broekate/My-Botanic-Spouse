@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,13 +44,21 @@ public class PlantManager : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField] Animator animator;
+    public event Action<string, float> OnStatChanged;
+    public bool IsInitialized { get; private set; }
+    public bool IsGameRunning { get; private set; }
+    public static event Action<PlantManager> OnPlantSpawned;
+
+
     #endregion
 
     /// <summary>
     /// This function will set the stat starting stat values
     /// </summary>
+
     public void Init()
     {
+        Debug.Log("[PlantManager] Init called");
         _plantHealth = _plantMaxHealth;
         _plantAffection = _plantMaxAffection;
         _plantSoilQuality = _plantMaxSoilQuality;
@@ -62,7 +71,20 @@ public class PlantManager : MonoBehaviour
         }
 
         gameManager = GameObject.Find("GameManager(PlayerManager)").GetComponent<GameManager>();
+
+        OnStatChanged?.Invoke("Health", _plantHealth);
+        OnStatChanged?.Invoke("Affection", _plantAffection);
+        OnStatChanged?.Invoke("SoilQuality", _plantSoilQuality);
+        OnStatChanged?.Invoke("Thirst", _plantThirst);
+        OnStatChanged?.Invoke("Warmth", _plantWarmth);
+        IsInitialized = true;
+
+        Debug.Log("[PlantManager] Initialized, broadcasting spawn");
+        OnPlantSpawned?.Invoke(this);
+
+        ForceStatSync();
     }
+
 
     /// <summary>
     /// At the start of the level this function will activate the plant stat decrease (Enable/Disable in the GameManager)
@@ -70,6 +92,7 @@ public class PlantManager : MonoBehaviour
     public void SetPlantState(bool gameState)
     {
         //if the game has started, change all stats at their rate; If it ends stop the stat change
+        IsGameRunning = gameState;
 
         if (gameState)
         {
@@ -86,6 +109,8 @@ public class PlantManager : MonoBehaviour
 
             _decreaseStats = StartCoroutine(DecreaseStats());
             _updateStatBars = StartCoroutine(StatBarUpdate(_statBarUpdateDelayTime));
+
+            ForceStatSync();
 
             Debug.Log("Everything enabled");
         }
@@ -144,6 +169,7 @@ public class PlantManager : MonoBehaviour
             gameManager.ChangeGameState(false);
         }
     }
+
     IEnumerator StatBarUpdate(float delayTime)
     {
         while (_plantHealth > 0)
@@ -166,6 +192,7 @@ public class PlantManager : MonoBehaviour
     /// <param name="changeType"></param>
     /// <param name="healthchange"></param>
     /// <returns></returns>
+    /// 
     public float ChangePlantStats(string changeType, float changeAmount)
     {
         switch (changeType)
@@ -249,9 +276,21 @@ public class PlantManager : MonoBehaviour
                 Debug.LogWarning(changeType + " Is not a valid option");
             break;
         }
+        OnStatChanged?.Invoke(changeType, GetPlantstat("Current", changeType));
         return _plantHealth;
     }
-    
+    public void ForceStatSync()
+    {
+
+        OnStatChanged?.Invoke("Health", _plantHealth);
+        OnStatChanged?.Invoke("Affection", _plantAffection);
+        OnStatChanged?.Invoke("SoilQuality", _plantSoilQuality);
+        OnStatChanged?.Invoke("Thirst", _plantThirst);
+        OnStatChanged?.Invoke("Warmth", _plantWarmth);
+    }
+
+
+
     /// <summary>
     /// Allows the change for the heater setting (Cold or warm)
     /// </summary>
@@ -334,7 +373,7 @@ public class PlantManager : MonoBehaviour
                 return 0;
             }   
         }
-        else if (stat == "Soil Quality")
+        else if (stat == "SoilQuality")
         {
             if (getState == "Current")
             {

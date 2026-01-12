@@ -1039,6 +1039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731868026724447583, guid: 8ed1f694741534a4285d78adea549037,
         type: 3}
+      propertyPath: m_Name
+      value: SoilQuality
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731868026724447583, guid: 8ed1f694741534a4285d78adea549037,
+        type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}

@@ -1491,9 +1491,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813233856470337645, guid: daa23308df3472243915d3c561bd303b,
         type: 3}
+      propertyPath: _coldMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813233856470337645, guid: daa23308df3472243915d3c561bd303b,
+        type: 3}
       propertyPath: _soilParent
       value: 
       objectReference: {fileID: 1457016697}
+    - target: {fileID: 8813233856470337645, guid: daa23308df3472243915d3c561bd303b,
+        type: 3}
+      propertyPath: _standardMin
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8813233856470337645, guid: daa23308df3472243915d3c561bd303b,
         type: 3}
       propertyPath: _healthParent
@@ -3447,7 +3457,7 @@ PrefabInstance:
     - target: {fileID: 449983458365034990, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.729
+      value: 3.718
       objectReference: {fileID: 0}
     - target: {fileID: 449983458365034990, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
@@ -8354,7 +8364,7 @@ PrefabInstance:
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
       propertyPath: _levelTime
-      value: 60
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
@@ -8903,7 +8913,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
