@@ -813,15 +813,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2070354722083700297, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.058
+      value: 1.6096
       objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.848
+      value: 3.857
       objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
