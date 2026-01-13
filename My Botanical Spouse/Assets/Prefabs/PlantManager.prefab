@@ -446,10 +446,45 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5175647111018890976, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2057043487677810849, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.04964918
+      objectReference: {fileID: 0}
+    - target: {fileID: -2057043487677810849, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1.0601072
+      objectReference: {fileID: 0}
+    - target: {fileID: -2057043487677810849, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
         type: 3}
       propertyPath: m_Name
       value: Plant-Spouce
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069551951009592587, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.040572584
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069551951009592587, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1.1993887
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069551951009592587, guid: 71b32b8a3ebe51a4fa070b07506b5b74,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
