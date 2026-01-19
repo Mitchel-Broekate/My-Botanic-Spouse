@@ -129,7 +129,7 @@ MonoBehaviour:
   - {fileID: 605039108567859089}
   - {fileID: 5128831398505862457}
   _statBarUpdateDelayTime: 0.1
-  animator: {fileID: 0}
+  animator: {fileID: 3595444425442378381}
 --- !u!1 &7823652690552569450
 GameObject:
   m_ObjectHideFlags: 0

@@ -3076,6 +3076,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf0440f04bb4a8f47895c849154196c8, type: 3}
+--- !u!1 &1092272310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3455342402597341912, guid: bf0440f04bb4a8f47895c849154196c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1092272309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098190100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,6 +3938,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11882738c18c2734788d8b392af29f4b, type: 3}
+--- !u!1 &1235345015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 374493954189377275, guid: 11882738c18c2734788d8b392af29f4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1235345014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1236195726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7174,25 +7186,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 297598028483779827, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.207
+      value: -8.954
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.857
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.83
+      value: 3.605
       objectReference: {fileID: 0}
     - target: {fileID: 5013986447612256291, guid: 2a13ec52b87bceb4dbcc116a07059a0b,
         type: 3}
@@ -8368,20 +8375,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
-      propertyPath: _levelTime
-      value: 600
-      objectReference: {fileID: 0}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 1235345015}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
-      propertyPath: plantParent
+      propertyPath: loseScreen
       value: 
-      objectReference: {fileID: 678642249}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
-      propertyPath: plantPrefab
-      value: 
-      objectReference: {fileID: 5116748616252623936, guid: 2633215c6555280438fd26d9a834235f,
-        type: 3}
+      objectReference: {fileID: 1092272310}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
       propertyPath: _plantParent
@@ -8389,34 +8390,9 @@ PrefabInstance:
       objectReference: {fileID: 678642249}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
-      propertyPath: _plantSpawns.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
-      propertyPath: plantManagers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
       propertyPath: _plantSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 288948670}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
-      propertyPath: _plantSpawns.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
-      propertyPath: _plantSpawns.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
-        type: 3}
-      propertyPath: plantManagers.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

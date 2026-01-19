@@ -44,5 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a351738cd26ba164bbb8e3278b1f34c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plantManager: {fileID: 0}
-  motivationPoints: 100
+  _motivationPoints: 0
+  plantPrefab: {fileID: 5116748616252623936, guid: 2633215c6555280438fd26d9a834235f,
+    type: 3}
+  _plantParent: {fileID: 0}
+  _levelTime: 300
+  _currentTime: 0
+  _timerActive: 0
+  _currentLevel: 0
+  _plantSpawns:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
