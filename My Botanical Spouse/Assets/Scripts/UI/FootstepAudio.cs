@@ -1,8 +1,8 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class XRMotionFootsteps : MonoBehaviour
 {
+    public Transform headTransform;
     public AudioSource audioSource;
     public AudioClip[] footstepClips;
 
@@ -10,22 +10,20 @@ public class XRMotionFootsteps : MonoBehaviour
     public float stepDistance = 1.8f;
     public float minHorizontalSpeed = 0.15f;
 
-    private CharacterController controller;
-    private Vector3 lastPosition;
+    private Vector3 lastHeadPosition;
     private float distanceAccumulated;
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-        lastPosition = transform.position;
+        lastHeadPosition = headTransform.position;
     }
 
     void Update()
     {
-        Vector3 currentPosition = transform.position;
+        Vector3 currentPosition = headTransform.position;
 
-        // Ignore vertical movement completely
-        Vector3 horizontalDelta = currentPosition - lastPosition;
+        // Ignore vertical movement
+        Vector3 horizontalDelta = currentPosition - lastHeadPosition;
         horizontalDelta.y = 0f;
 
         float horizontalDistance = horizontalDelta.magnitude;
@@ -33,7 +31,7 @@ public class XRMotionFootsteps : MonoBehaviour
 
         if (horizontalSpeed < minHorizontalSpeed)
         {
-            lastPosition = currentPosition;
+            lastHeadPosition = currentPosition;
             return;
         }
 
@@ -45,7 +43,7 @@ public class XRMotionFootsteps : MonoBehaviour
             distanceAccumulated = 0f;
         }
 
-        lastPosition = currentPosition;
+        lastHeadPosition = currentPosition;
     }
 
     void PlayFootstep()
