@@ -3517,6 +3517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 4113290913007000778, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4329642968151294924, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7903,12 +7908,12 @@ PrefabInstance:
     - target: {fileID: 4965039269231910618, guid: 6a02ec332135b7142a318d6020025a9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.034
+      value: 1.193
       objectReference: {fileID: 0}
     - target: {fileID: 4965039269231910618, guid: 6a02ec332135b7142a318d6020025a9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.208
+      value: 2.166
       objectReference: {fileID: 0}
     - target: {fileID: 4965039269231910618, guid: 6a02ec332135b7142a318d6020025a9b,
         type: 3}
