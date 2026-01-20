@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 55e64e617a8bfff4ba846574e2651eb9, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6bfab16f387f95e4bb60f866299be241, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2938,6 +2938,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3854305990845537823, guid: bf0440f04bb4a8f47895c849154196c8,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179525983321169497, guid: bf0440f04bb4a8f47895c849154196c8,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7026708614577544138, guid: bf0440f04bb4a8f47895c849154196c8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3036,6 +3046,11 @@ PrefabInstance:
     - target: {fileID: 7026708614577544138, guid: bf0440f04bb4a8f47895c849154196c8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760202252742060528, guid: bf0440f04bb4a8f47895c849154196c8,
+        type: 3}
+      propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3477,11 +3492,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
+    - target: {fileID: 1508643558968256592, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576341161114411639, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2235158799271957132, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
+    - target: {fileID: 3111713440699957526, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4113290913007000778, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_Name
@@ -3492,6 +3522,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
+    - target: {fileID: 4369503520869216649, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224604456387478378, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232522965919136000, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7756054138026135627, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3502,11 +3547,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
+    - target: {fileID: 8645565545502772407, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8734455854974225415, guid: 55b3e1fd25fd96f47aa98923b159e265,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1409043633}
+    - target: {fileID: 8852900234674595386, guid: 55b3e1fd25fd96f47aa98923b159e265,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3898,6 +3953,21 @@ PrefabInstance:
     - target: {fileID: 4598404505762782626, guid: 11882738c18c2734788d8b392af29f4b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777310282974872588, guid: 11882738c18c2734788d8b392af29f4b,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231638618011441098, guid: 11882738c18c2734788d8b392af29f4b,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014513838105659644, guid: 11882738c18c2734788d8b392af29f4b,
+        type: 3}
+      propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

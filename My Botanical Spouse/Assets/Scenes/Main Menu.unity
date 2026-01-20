@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6bfab16f387f95e4bb60f866299be241, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -811,6 +811,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 853149608992415135, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401600995249243086, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2070354722083700297, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -820,6 +830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345688732067520087, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
@@ -869,6 +884,51 @@ PrefabInstance:
     - target: {fileID: 2408257769245251993, guid: fc551b13c35b8fc4299ff5dc63eb55de,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062183053536473302, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669794522665527269, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860143777406787646, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860143777406787646, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868497517137031955, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082077891314793530, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342070112966146512, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751362361522996960, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103069597402890598, guid: fc551b13c35b8fc4299ff5dc63eb55de,
+        type: 3}
+      propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
