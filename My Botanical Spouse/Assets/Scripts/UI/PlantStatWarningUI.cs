@@ -27,6 +27,10 @@ public class PlantStatWarningUI : MonoBehaviour
     [SerializeField] List<GameObject> _coldWarnings;
     [SerializeField] List<GameObject> _hotWarnings;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _warningSpawnSound;
+
     Dictionary<string, GameObject> _instances = new();
 
     void OnEnable()
@@ -58,13 +62,8 @@ public class PlantStatWarningUI : MonoBehaviour
         _plantManager.ForceStatSync();
     }
 
-
     void OnStatChanged(string stat, float value)
     {
-
-
-
-
         switch (stat)
         {
             case "Health":
@@ -84,8 +83,6 @@ public class PlantStatWarningUI : MonoBehaviour
                 break;
         }
     }
-
-
 
     void HandleStandard(string key, float value, List<GameObject> prefabs, Transform parent)
     {
@@ -113,6 +110,8 @@ public class PlantStatWarningUI : MonoBehaviour
             prefabs[Random.Range(0, prefabs.Count)],
             parent
         );
+
+        PlayWarningSound();
     }
 
     void Replace(string key, List<GameObject> prefabs, Transform parent)
@@ -127,5 +126,11 @@ public class PlantStatWarningUI : MonoBehaviour
 
         Destroy(go);
         _instances.Remove(key);
+    }
+
+    void PlayWarningSound()
+    {
+        if (_audioSource != null && _warningSpawnSound != null)
+            _audioSource.PlayOneShot(_warningSpawnSound);
     }
 }
