@@ -8640,6 +8640,11 @@ PrefabInstance:
       objectReference: {fileID: 678642249}
     - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
         type: 3}
+      propertyPath: _motivationPoints
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561567334500430, guid: 88351b58f1c00d44c94c97ab9db4cbb2,
+        type: 3}
       propertyPath: _plantSpawns.Array.data[0]
       value: 
       objectReference: {fileID: 288948670}
