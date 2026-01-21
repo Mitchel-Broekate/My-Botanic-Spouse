@@ -73,6 +73,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StylisedGrass
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ce9f640cac33654fbbe2abe4e4ecef3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
